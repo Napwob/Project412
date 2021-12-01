@@ -1,1 +1,3 @@
-game.rb
+class Game < ApplicationRecord
+	
+end

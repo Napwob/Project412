@@ -2,4 +2,8 @@
 <h1 align="center">VALERA</h1>
 <p align="center">BEST GAME EVER</p>
 <h2 align="center">Welcome <%= name %></h2>
-
+<% if user_signed_in? %>
+	<h3 align="center"> 
+		<%= link_to "Game", "/game"%>
+	</h3>
+<% end %>
