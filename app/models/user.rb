@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
    def load_from_slot(slot)
     self.mana = slot.mana
-    self.happiens = slot.happiens
+    self.happiness = slot.happiness
     self.fatigue = slot.fatigue
     self.money = slot.money
 
@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def init_stats
     self.mana = 30
-    self.happiens = 5
+    self.happiness = 5
     self.fatigue = 0
     self.money = 5000
 
@@ -48,7 +48,6 @@ class User < ApplicationRecord
 
   def check_win_lose
     if self.money > 30_000
-      self.wins += 1
       save
 
       'You win! Now Valera can buy notebook and work at home, drinking while working.'

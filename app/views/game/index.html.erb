@@ -6,5 +6,8 @@
 <p>Fatique: <%= current_user.fatigue %><p>
 <p>Money: <%= current_user.money %>$<p>
 <li class="nav-item">
+    <li><%= link_to 'New Game', new_game_path, method: :new_game %></li>
+</li>
+<li class="nav-item">
     <li><%= link_to 'Go Job', go_job_path, method: :go_job %></li>
 </li>
