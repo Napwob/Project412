@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   post 'go_job' => 'game#go_job'
   post 'contemplate_nature' => 'game#contemplate_nature'
-  post 'drink_wine_and_watch_TV_series' => 'game#drink_wine_and_watch_TV_series'
+  post 'drink_wine_and_watch_tv_series' => 'game#drink_wine_and_watch_tv_series'
   post 'go_to_the_bar' => 'game#go_to_the_bar'
   post 'drink_with_marginal_people' => 'game#drink_with_marginal_people'
   post 'sing_in_the_subway' => 'game#sing_in_the_subway' 

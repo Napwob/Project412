@@ -45,7 +45,9 @@ class User < ApplicationRecord
       self.mana = 0
       self.happiness -= 1
     end
-    self.mana = 100 if self.mana > 100
+    if self.mana > 100
+      self.mana = 100 
+    end
 
     self.fatigue = 100 if self.fatigue > 100
     self.fatigue = 0 if self.fatigue.negative?
@@ -101,6 +103,7 @@ class User < ApplicationRecord
     apply_stats(0, -10, 1, 20, +10)
     if mana > 40 and mana < 70
       apply_stats(0, 0, 0, 0, +50)
+    end
   end
 
   def sleep
@@ -108,7 +111,9 @@ class User < ApplicationRecord
     apply_stats(0, -50, 0, -70, 0)
     if mana < 30
       apply_stats(90, 0, 0, 0, 0)
+    end
     if mana > 70
       apply_stats(0, 0, -3, 0, 0)
+    end
   end
 end
