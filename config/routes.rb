@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   post 'sing_in_the_subway' => 'game#sing_in_the_subway' 
   post 'sleep' => 'game#sleep'
   post 'new_game' => 'game#new_game'
+  post 'load_game' => 'slots#load_game'
 end

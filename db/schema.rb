@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_154225) do
+ActiveRecord::Schema.define(version: 2021_12_02_125629) do
+
+  create_table "slots", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "health"
+    t.integer "mana"
+    t.integer "happiness"
+    t.integer "fatigue"
+    t.integer "money"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
