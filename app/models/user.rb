@@ -70,7 +70,7 @@ class User < ApplicationRecord
   end
 
   def go_job
-    if mana > 50 or fatigue < 60
+    if mana > 50 or fatigue > 60
       "Valera cannot go to work because of his condition"
     else
       "Valera goes to work"
