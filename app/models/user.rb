@@ -71,7 +71,7 @@ class User < ApplicationRecord
 
   def go_job
     if mana > 50 or fatigue < 60
-      "Valera cannot go to work because he is drunk or tired"
+      "Valera cannot go to work because of his condition"
     else
       "Valera goes to work"
       apply_stats(0, -30, 0, 30, 1250)
@@ -84,18 +84,29 @@ class User < ApplicationRecord
   end
 
   def drink_wine_and_watch_tv_series
-    "Valera drinks wine and watches the TV series"
-    apply_stats(-5, 30, -1, 10, -20)
+    if money < 20
+      "Valera cannot drink wine and watch TV series, as he does not have enough money"
+    else
+      "Valera drinks wine and watches the TV series"
+      apply_stats(-5, 30, -1, 10, -20)
+    end
   end
 
   def go_to_the_bar
-    "Valera goes to the bar"
-    apply_stats(-10, 60, 1, 40, -100)
+    if money < 100
+      "Valera cannot go to the bar due to the fact that he does not have enough money"
+    else
+      "Valera goes to the bar"
+      apply_stats(-10, 60, 1, 40, -100)
+    end
   end
 
   def drink_with_marginal_people
-    "Valera drinks with marginal people" 
-    apply_stats(-80, 90, 5, 80, -150)
+    if money < 150
+      "Valera cannot drink with marginal people, due to the fact that he does not have enough money"
+    else
+      "Valera drinks with marginal people" 
+      apply_stats(-80, 90, 5, 80, -150)
   end
 
   def sing_in_the_subway
