@@ -68,11 +68,10 @@ class User < ApplicationRecord
   end
 
   def go_job
-    if mana > 60
+    if mana > 50 and fatigue < 10
       'You cannot go job: you are drunk.'
     else
       apply_stats(0, -30, 0, 30, 1250)
-
       "Unloved job brings Valera a stable income. At least when he's not drunk."
     end
   end
