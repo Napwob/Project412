@@ -45,7 +45,9 @@ class User < ApplicationRecord
       self.mana = 0
       self.happiness -= 1
     end
-    self.mana = 100 if self.mana > 100
+    if self.mana > 100
+      self.mana = 100 
+    end
 
     self.fatigue = 100 if self.fatigue > 100
     self.fatigue = 0 if self.fatigue.negative?
@@ -69,7 +71,7 @@ class User < ApplicationRecord
 
   def go_job
     if mana > 50 or fatigue < 60
-      "Valera cannot go to work because he is drunk or tired"
+      "Valera cannot go to work because of his condition"
     else
       "Valera goes to work"
       apply_stats(0, -30, 0, 30, 1250)
@@ -82,18 +84,29 @@ class User < ApplicationRecord
   end
 
   def drink_wine_and_watch_tv_series
-    "Valera drinks wine and watches the TV series"
-    apply_stats(-5, 30, -1, 10, -20)
+    if money < 20
+      "Valera cannot drink wine and watch TV series, as he does not have enough money"
+    else
+      "Valera drinks wine and watches the TV series"
+      apply_stats(-5, 30, -1, 10, -20)
+    end
   end
 
   def go_to_the_bar
-    "Valera goes to the bar"
-    apply_stats(-10, 60, 1, 40, -100)
+    if money < 100
+      "Valera cannot go to the bar due to the fact that he does not have enough money"
+    else
+      "Valera goes to the bar"
+      apply_stats(-10, 60, 1, 40, -100)
+    end
   end
 
   def drink_with_marginal_people
-    "Valera drinks with marginal people" 
-    apply_stats(-80, 90, 5, 80, -150)
+    if money < 150
+      "Valera cannot drink with marginal people, due to the fact that he does not have enough money"
+    else
+      "Valera drinks with marginal people" 
+      apply_stats(-80, 90, 5, 80, -150)
   end
 
   def sing_in_the_subway
@@ -101,6 +114,7 @@ class User < ApplicationRecord
     apply_stats(0, -10, 1, 20, +10)
     if mana > 40 and mana < 70
       apply_stats(0, 0, 0, 0, +50)
+    end
   end
 
   def sleep
@@ -108,7 +122,9 @@ class User < ApplicationRecord
     apply_stats(0, -50, 0, -70, 0)
     if mana < 30
       apply_stats(90, 0, 0, 0, 0)
+    end
     if mana > 70
       apply_stats(0, 0, -3, 0, 0)
+    end
   end
 end
