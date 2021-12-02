@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GameController < ApplicationController
   def index
     if user_session.nil?

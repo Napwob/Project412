@@ -5,7 +5,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-   def load_from_slot(slot)
+  def load_from_slot(slot)
+    self.health = slot.health
     self.mana = slot.mana
     self.happiness = slot.happiness
     self.fatigue = slot.fatigue
@@ -15,6 +16,7 @@ class User < ApplicationRecord
   end
 
   def init_stats
+    self.health = 100
     self.mana = 30
     self.happiness = 5
     self.fatigue = 0
@@ -23,7 +25,8 @@ class User < ApplicationRecord
     save
   end
 
-  def apply_stats(mana, happiness, fatigue, money)
+  def apply_stats(health, mana, happiness, fatigue, money)
+    self.health += health
     self.mana += mana
     self.happiness += happiness
     self.fatigue += fatigue
@@ -34,6 +37,10 @@ class User < ApplicationRecord
   end
 
   def fix_stats
+    self.health = 100 if self.health > 100
+
+    self.health = 0 if self.health.negative?
+
     if self.mana.negative?
       self.mana = 0
       self.happiness -= 1
@@ -51,22 +58,22 @@ class User < ApplicationRecord
       save
 
       'You win! Now Valera can buy notebook and work at home, drinking while working.'
-    elsif self.happiness < -9
+    elsif (self.happiness < -9) || (self.health < 1)
       save
 
-      'You defeated! Valera got depressed.'
+      'You defeated! Valera was found dead.'
     else
       ''
     end
-  end  
-  
+  end
+
   def go_job
     if mana > 60
       'You cannot go job: you are drunk.'
     else
-      apply_stats(-30, 0, 30, 1250)
+      apply_stats(0, -30, 0, 30, 1250)
 
       "Unloved job brings Valera a stable income. At least when he's not drunk."
     end
-  end    
+  end
 end
