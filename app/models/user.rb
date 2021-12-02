@@ -60,7 +60,7 @@ class User < ApplicationRecord
       save
 
       'You win! Now Valera can buy notebook and work at home, drinking while working.'
-    elsif (self.happiness < -9) || (self.health < 1)
+    elsif (self.happiness < -9) or (self.health < 1)
       save
 
       'You defeated! Valera was found dead.'

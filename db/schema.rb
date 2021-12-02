@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_125629) do
 
   create_table "slots", force: :cascade do |t|
     t.integer "user_id"
+    t.string "name"
     t.integer "health"
     t.integer "mana"
     t.integer "happiness"

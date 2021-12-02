@@ -2,7 +2,7 @@ class CreateSlots < ActiveRecord::Migration[6.1]
   def change
     create_table :slots do |t|
       t.integer :user_id
-      t.string :save_name
+      t.string :name
       t.integer :health
       t.integer :mana
       t.integer :happiness
