@@ -3,7 +3,7 @@
 class Slot < ApplicationRecord
   def set_from_user(user, save_name)
     self.user_id = user.id
-    self.health = health
+    self.health = user.health
     self.name = save_name
     self.mana = user.mana
     self.happiness = user.happiness
