@@ -107,6 +107,7 @@ class User < ApplicationRecord
     else
       "Valera drinks with marginal people" 
       apply_stats(-80, 90, 5, 80, -150)
+    end
   end
 
   def sing_in_the_subway
@@ -127,4 +128,5 @@ class User < ApplicationRecord
       apply_stats(0, 0, -3, 0, 0)
     end
   end
+
 end
