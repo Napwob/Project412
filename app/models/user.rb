@@ -58,7 +58,7 @@ class User < ApplicationRecord
       save
 
       'You win! Now Valera can buy notebook and work at home, drinking while working.'
-    elsif self.happiness < -9 or self.health < 1
+    elsif (self.happiness < -9) || (self.health < 1)
       save
 
       'You defeated! Valera was found dead.'
@@ -71,22 +71,22 @@ class User < ApplicationRecord
     if (mana > 50) || (fatigue > 60)
       'Valera cannot go to work because of his condition'
     else
-      'Valera goes to work'
       apply_stats(0, -30, 0, 30, 1250)
+      'Valera goes to work'
     end
   end
 
   def contemplate_nature
-    'Valera contemplates nature'
     apply_stats(0, -10, 1, -10, 0)
+    'Valera contemplates nature'
   end
 
   def drink_wine_and_watch_tv_series
     if money < 20
       'Valera cannot drink wine and watch TV series, as he does not have enough money'
     else
-      'Valera drinks wine and watches the TV series'
       apply_stats(-5, 30, -1, 10, -20)
+      'Valera drinks wine and watches the TV series'
     end
   end
 
@@ -94,8 +94,8 @@ class User < ApplicationRecord
     if money < 100
       'Valera cannot go to the bar due to the fact that he does not have enough money'
     else
-      'Valera goes to the bar'
       apply_stats(-10, 60, 1, 40, -100)
+      'Valera goes to the bar'
     end
   end
 
@@ -103,21 +103,28 @@ class User < ApplicationRecord
     if money < 150
       'Valera cannot drink with marginal people, due to the fact that he does not have enough money'
     else
-      'Valera drinks with marginal people'
       apply_stats(-80, 90, 5, 80, -150)
+      'Valera drinks with marginal people'
     end
   end
 
   def sing_in_the_subway
-    'Valera sings in the subway'
-    apply_stats(0, -10, 1, 20, +10)
-    apply_stats(0, 0, 0, 0, +50) if (mana > 40) && (mana < 70)
+    if (mana > 40) and (mana < 70)
+      apply_stats(0, 0, 0, 0, +50) 
+      'Valera sing in the subway really nice'
+    else
+      apply_stats(0, -10, 1, 20, +10)
+      'Valera sing in the subway not bad'
+    end
   end
 
   def sleep
-    'Valera is sleeping'
-    apply_stats(0, -50, 0, -70, 0)
-    apply_stats(90, 0, 0, 0, 0) if mana < 30
-    apply_stats(0, 0, -3, 0, 0) if mana > 70
+    if mana < 40
+      apply_stats(90, -50, 0, -70, 0) 
+      'Valera is sleeping good'
+    else
+      apply_stats(0, -50, -3, -70, 0) 
+      'Valera is sleeping bad'
+    end
   end
 end
