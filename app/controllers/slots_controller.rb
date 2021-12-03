@@ -21,6 +21,7 @@ class SlotsController < ApplicationController
     render plain: 'Error! You not authorized.', status: :unauthorized
   end
 
+
   def create
     if params[:save_form][:name_save] == ''
       flash.alert = 'Invalid name save!'
@@ -41,6 +42,11 @@ class SlotsController < ApplicationController
     slot.set_from_user(current_user, params[:save_form][:name_save])
 
     slot.save
+
+    if Slot.count > 3
+      Slot.first.delete
+    end
+
     redirect_to '/game'
   end
 
