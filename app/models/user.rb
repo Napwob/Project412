@@ -109,6 +109,7 @@ class User < ApplicationRecord
   end
 
   def sing_in_the_subway
+
     if fatigue > 80
       "Valera cannot sing on the subway, as she is very tired"
     else
@@ -118,6 +119,7 @@ class User < ApplicationRecord
       else
         apply_stats(0, -10, 1, 20, +10)
         'Valera sing in the subway not bad'
+      end
     end
   end
 

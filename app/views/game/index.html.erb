@@ -1,17 +1,19 @@
 <% name = current_user.present? ? current_user.name : 'Stranger'%>
-<h>GAME GAME GAME</h>
+<h>Valera Live Stats:</h>
 <p>Health: <%= current_user.health %><p>
 <p>Mana: <%= current_user.mana %><p>
 <p>Happines: <%= current_user.happiness %><p>
 <p>Fatique: <%= current_user.fatigue %><p>
-<p>Money: <%= current_user.money %>$<p>
+<p>Money: <%= current_user.money %>₽<p>
 <li class="nav-item">
     <li><%= link_to 'New Game', new_game_path, method: :new_game %></li>
-    <li><%= link_to 'Go Job', go_job_path, method: :go_job %></li>
-    <li><%= link_to 'Contemplate nature', contemplate_nature_path, method: :сontemplate_nature %></li>
-    <li><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, method: :drink_wine_and_watch_tv_series %></li>
-    <li><%= link_to 'Go to the bar', go_to_the_bar_path, method: :go_to_the_bar %></li>
-    <li><%= link_to 'Drink with marginal people', drink_with_marginal_people_path, method: :drink_with_marginal_people %></li> 
-    <li><%= link_to 'Sing in the subway', sing_in_the_subway_path, method: :sing_in_the_subway %></li>
-    <li><%= link_to 'Sleep', sleep_path, method: :sleep %></li>
+    <li><%= link_to "Load Game", slots_path %></li>
+    <li><%= link_to "Save Game", new_slot_path if !@is_lose %></li>
+    <li><%= link_to 'Go Job', go_job_path, method: :go_job if !@is_lose %></li>
+    <li><%= link_to 'Contemplate nature', contemplate_nature_path, method: :сontemplate_nature if !@is_lose%></li>
+    <li><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, method: :drink_wine_and_watch_tv_series if !@is_lose%></li>
+    <li><%= link_to 'Go to the bar', go_to_the_bar_path, method: :go_to_the_bar if !@is_lose%></li>
+    <li><%= link_to 'Drink with marginal people', drink_with_marginal_people_path, method: :drink_with_marginal_people if !@is_lose%></li> 
+    <li><%= link_to 'Sing in the subway', sing_in_the_subway_path, method: :sing_in_the_subway if !@is_lose%></li>
+    <li><%= link_to 'Sleep', sleep_path, method: :sleep if !@is_lose%></li>
 </li> 
