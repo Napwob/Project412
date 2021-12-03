@@ -109,12 +109,17 @@ class User < ApplicationRecord
   end
 
   def sing_in_the_subway
-    if (mana > 40) and (mana < 70)
-      apply_stats(0, 0, 0, 0, +50) 
-      'Valera sing in the subway really nice'
+
+    if fatigue > 80
+      "Valera cannot sing on the subway, as she is very tired"
     else
-      apply_stats(0, -10, 1, 20, +10)
-      'Valera sing in the subway not bad'
+      if (mana > 40) and (mana < 70)
+        apply_stats(0, 0, 0, 0, +50) 
+        'Valera sing in the subway really nice'
+      else
+        apply_stats(0, -10, 1, 20, +10)
+        'Valera sing in the subway not bad'
+      end
     end
   end
 
