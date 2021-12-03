@@ -60,7 +60,7 @@ class User < ApplicationRecord
       save
 
       'You win! Now Valera can buy notebook and work at home, drinking while working.'
-    elsif (self.happiness < -9) || (self.health < 1)
+    elsif (self.happiness < -9) 
       save
 
       'You defeated! Valera was found dead.'
@@ -107,13 +107,18 @@ class User < ApplicationRecord
     else
       "Valera drinks with marginal people" 
       apply_stats(-80, 90, 5, 80, -150)
+    end
   end
 
   def sing_in_the_subway
-    "Valera sings in the subway"
-    apply_stats(0, -10, 1, 20, +10)
-    if mana > 40 and mana < 70
-      apply_stats(0, 0, 0, 0, +50)
+    if fatigue > 80 
+      "Valera is too tired for this "
+    else
+      "Valera sings in the subway"
+      apply_stats(0, -10, 1, 20, +10)
+      if mana > 40 and mana < 70
+        apply_stats(0, 0, 0, 0, +50)
+      end
     end
   end
 
@@ -127,4 +132,5 @@ class User < ApplicationRecord
       apply_stats(0, 0, -3, 0, 0)
     end
   end
+
 end
