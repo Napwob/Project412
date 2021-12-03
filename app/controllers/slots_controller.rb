@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SlotsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
@@ -21,7 +23,6 @@ class SlotsController < ApplicationController
     render plain: 'Error! You not authorized.', status: :unauthorized
   end
 
-
   def create
     if params[:save_form][:name_save] == ''
       flash.alert = 'Invalid name save!'
@@ -43,9 +44,7 @@ class SlotsController < ApplicationController
 
     slot.save
 
-    if Slot.count > 3
-      Slot.first.delete
-    end
+    Slot.first.delete if Slot.count > 3
 
     redirect_to '/game'
   end

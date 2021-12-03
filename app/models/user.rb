@@ -45,9 +45,7 @@ class User < ApplicationRecord
       self.mana = 0
       self.happiness -= 1
     end
-    if self.mana > 100
-      self.mana = 100 
-    end
+    self.mana = 100 if self.mana > 100
 
     self.fatigue = 100 if self.fatigue > 100
     self.fatigue = 0 if self.fatigue.negative?
@@ -60,7 +58,7 @@ class User < ApplicationRecord
       save
 
       'You win! Now Valera can buy notebook and work at home, drinking while working.'
-    elsif (self.happiness < -9) 
+    elsif self.happiness < -9 or self.health < 1
       save
 
       'You defeated! Valera was found dead.'
@@ -70,63 +68,56 @@ class User < ApplicationRecord
   end
 
   def go_job
-    if mana > 50 or fatigue > 60
-      "Valera cannot go to work because of his condition"
+    if (mana > 50) || (fatigue > 60)
+      'Valera cannot go to work because of his condition'
     else
-      "Valera goes to work"
+      'Valera goes to work'
       apply_stats(0, -30, 0, 30, 1250)
     end
   end
 
   def contemplate_nature
-    "Valera contemplates nature"
+    'Valera contemplates nature'
     apply_stats(0, -10, 1, -10, 0)
   end
 
   def drink_wine_and_watch_tv_series
     if money < 20
-      "Valera cannot drink wine and watch TV series, as he does not have enough money"
+      'Valera cannot drink wine and watch TV series, as he does not have enough money'
     else
-      "Valera drinks wine and watches the TV series"
+      'Valera drinks wine and watches the TV series'
       apply_stats(-5, 30, -1, 10, -20)
     end
   end
 
   def go_to_the_bar
     if money < 100
-      "Valera cannot go to the bar due to the fact that he does not have enough money"
+      'Valera cannot go to the bar due to the fact that he does not have enough money'
     else
-      "Valera goes to the bar"
+      'Valera goes to the bar'
       apply_stats(-10, 60, 1, 40, -100)
     end
   end
 
   def drink_with_marginal_people
     if money < 150
-      "Valera cannot drink with marginal people, due to the fact that he does not have enough money"
+      'Valera cannot drink with marginal people, due to the fact that he does not have enough money'
     else
-      "Valera drinks with marginal people" 
+      'Valera drinks with marginal people'
       apply_stats(-80, 90, 5, 80, -150)
     end
   end
 
   def sing_in_the_subway
-    "Valera sings in the subway"
+    'Valera sings in the subway'
     apply_stats(0, -10, 1, 20, +10)
-    if mana > 40 and mana < 70
-      apply_stats(0, 0, 0, 0, +50)
-    end
+    apply_stats(0, 0, 0, 0, +50) if (mana > 40) && (mana < 70)
   end
 
   def sleep
-    "Valera is sleeping"
+    'Valera is sleeping'
     apply_stats(0, -50, 0, -70, 0)
-    if mana < 30
-      apply_stats(90, 0, 0, 0, 0)
-    end
-    if mana > 70
-      apply_stats(0, 0, -3, 0, 0)
-    end
+    apply_stats(90, 0, 0, 0, 0) if mana < 30
+    apply_stats(0, 0, -3, 0, 0) if mana > 70
   end
-
 end
