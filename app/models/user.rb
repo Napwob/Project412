@@ -45,7 +45,11 @@ class User < ApplicationRecord
       self.mana = 0
       self.happiness -= 1
     end
-    self.mana = 100 if self.mana > 100
+
+    if self.mana > 100
+      self.health = self.health - ((self.mana - 100) / 4)
+      self.mana = 100
+    end
 
     self.fatigue = 100 if self.fatigue > 100
     self.fatigue = 0 if self.fatigue.negative?
