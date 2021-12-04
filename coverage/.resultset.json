@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/napwob/Project412/app/models/user.rb": {
+      "/home/ilya/Project412/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -141,7 +141,7 @@
           null
         ]
       },
-      "/home/napwob/Project412/app/models/application_record.rb": {
+      "/home/ilya/Project412/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -150,7 +150,7 @@
           null
         ]
       },
-      "/home/napwob/Project412/app/helpers/application_helper.rb": {
+      "/home/ilya/Project412/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -158,7 +158,7 @@
           null
         ]
       },
-      "/home/napwob/Project412/app/helpers/home_helper.rb": {
+      "/home/ilya/Project412/app/helpers/home_helper.rb": {
         "lines": [
           null,
           null,
@@ -166,7 +166,7 @@
           null
         ]
       },
-      "/home/napwob/Project412/app/models/slot.rb": {
+      "/home/ilya/Project412/app/models/slot.rb": {
         "lines": [
           null,
           null,
@@ -193,7 +193,7 @@
           null
         ]
       },
-      "/home/napwob/Project412/app/channels/application_cable/channel.rb": {
+      "/home/ilya/Project412/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -205,7 +205,7 @@
         "branches": {
         }
       },
-      "/home/napwob/Project412/app/channels/application_cable/connection.rb": {
+      "/home/ilya/Project412/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -217,7 +217,7 @@
         "branches": {
         }
       },
-      "/home/napwob/Project412/app/controllers/application_controller.rb": {
+      "/home/ilya/Project412/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -228,76 +228,6 @@
           null,
           0,
           null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/napwob/Project412/app/controllers/game_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
           0,
           0,
           null,
@@ -310,7 +240,77 @@
         "branches": {
         }
       },
-      "/home/napwob/Project412/app/controllers/home_controller.rb": {
+      "/home/ilya/Project412/app/controllers/game_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/ilya/Project412/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -321,7 +321,7 @@
         "branches": {
         }
       },
-      "/home/napwob/Project412/app/controllers/slots_controller.rb": {
+      "/home/ilya/Project412/app/controllers/slots_controller.rb": {
         "lines": [
           null,
           null,
@@ -393,7 +393,7 @@
         "branches": {
         }
       },
-      "/home/napwob/Project412/app/jobs/application_job.rb": {
+      "/home/ilya/Project412/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -408,7 +408,7 @@
         "branches": {
         }
       },
-      "/home/napwob/Project412/app/mailers/application_mailer.rb": {
+      "/home/ilya/Project412/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -420,7 +420,7 @@
         "branches": {
         }
       },
-      "/home/napwob/Project412/app/models/game.rb": {
+      "/home/ilya/Project412/app/models/game.rb": {
         "lines": [
           null,
           null,
@@ -431,6 +431,6 @@
         }
       }
     },
-    "timestamp": 1638546396
+    "timestamp": 1638550131
   }
 }
