@@ -4,9 +4,9 @@
 <h2 align="center">Welcome <%= name %></h2>
 <% if user_signed_in? %>
 	<h3 align="center"> 
-		<li class="nav-item">
+		<button class="nav-item">
 			<%= link_to "Game", "/game", class:'nav-link'%>
-		</li>
+		</button>
 	</h3>
 <%else%>
 	<p align="center"> Please, sign in to play</h3>
