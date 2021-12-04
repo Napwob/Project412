@@ -12,7 +12,11 @@
     <p>Fatique: <progress class="fatigue-roll" value="<%= current_user.fatigue %>" max="100"></progress><p>
     <p>Money: <%= current_user.money %>₽<p>
 </h6>
-
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info" align = "center">
+        <%= msg %>
+      </div>
+    <% end %>
 <h6 align="center", class="nav-item">
         <button><%= link_to 'New Game', new_game_path, method: :new_game, class: "link"%></button>
         <% if !@is_lose %>
