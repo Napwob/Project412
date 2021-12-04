@@ -1,14 +1,14 @@
 <% name = current_user.present? ? current_user.name : 'Stranger'%>
-<h>Valera Live Stats:</h>
-<p>Health: <%= current_user.health %><p>
-<p>Mana: <%= current_user.mana %><p>
-<p>Happines: <%= current_user.happiness %><p>
-<p>Fatique: <%= current_user.fatigue %><p>
-<p>Money: <%= current_user.money %>₽<p>
-<li class="nav-item">
-    <li><%= link_to 'New Game', new_game_path, method: :new_game %></li>
-    <li><%= link_to "Load Game", slots_path %></li>
-    <li><%= link_to "Save Game", new_slot_path if !@is_lose %></li>
+<h2 align="center">Valera Live Stats:</h2>
+<p align="center">Health: <%= current_user.health %><p>
+<p align="center">Mana: <%= current_user.mana %><p>
+<p align="center">Happines: <%= current_user.happiness %><p>
+<p align="center">Fatique: <%= current_user.fatigue %><p>
+<p align="center">Money: <%= current_user.money %>₽<p>
+<h6 align="center", class="nav-item">
+    <button><%= link_to 'New Game', new_game_path, method: :new_game %></button>
+    <button><%= link_to "Load Game", slots_path %></button>
+    <button><%= link_to "Save Game", new_slot_path %></button>
     <li><%= link_to 'Go Job', go_job_path, method: :go_job if !@is_lose %></li>
     <li><%= link_to 'Contemplate nature', contemplate_nature_path, method: :сontemplate_nature if !@is_lose%></li>
     <li><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, method: :drink_wine_and_watch_tv_series if !@is_lose%></li>
@@ -16,4 +16,4 @@
     <li><%= link_to 'Drink with marginal people', drink_with_marginal_people_path, method: :drink_with_marginal_people if !@is_lose%></li> 
     <li><%= link_to 'Sing in the subway', sing_in_the_subway_path, method: :sing_in_the_subway if !@is_lose%></li>
     <li><%= link_to 'Sleep', sleep_path, method: :sleep if !@is_lose%></li>
-</li> 
+</h6> 
