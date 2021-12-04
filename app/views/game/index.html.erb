@@ -1,20 +1,24 @@
 <% name = current_user.present? ? current_user.name : 'Stranger'%>
-
-<h>Valera Live Stats:</h>
-<p>Health: <progress class="health-roll" value="<%= current_user.health %>" max="100"></progress><p> 
-<p>Mana: <progress class="mana-roll" value="<%= current_user.mana %>" max="100"></progress><p>
-<% if current_user.happiness.positive? or current_user.happiness.zero?%>
-    <p>Happiness: <progress class="happiness1-roll" value="<%= current_user.happiness %>" max="10"></progress><p>
-<%end%>
-<% if current_user.happiness.negative? %>
-    <p>Sadness: <progress class="happiness2-roll" value="<%= current_user.happiness.abs %>" max="10"></progress><p>
-<%end%>
-<p>Fatique: <progress class="fatigue-roll" value="<%= current_user.fatigue %>" max="100"></progress><p>
-<p>Money: <%= current_user.money %>₽<p>
 <h6 align="center", class="nav-item">
-    <button><%= link_to 'New Game', new_game_path, method: :new_game %></button>
-    <button><%= link_to "Load Game", slots_path %></button>
-    <button><%= link_to "Save Game", new_slot_path %></button>
+    <h>Valera Live Stats:</h>
+    <p>Health: <progress class="health-roll" value="<%= current_user.health %>" max="100"></progress><p> 
+    <p>Mana: <progress class="mana-roll" value="<%= current_user.mana %>" max="100"></progress><p>
+    <% if current_user.happiness.positive? or current_user.happiness.zero?%>
+        <p>Happiness: <progress class="happiness1-roll" value="<%= current_user.happiness %>" max="10"></progress><p>
+    <%end%>
+    <% if current_user.happiness.negative? %>
+        <p>Sadness: <progress class="happiness2-roll" value="<%= current_user.happiness.abs %>" max="10"></progress><p>
+    <%end%>
+    <p>Fatique: <progress class="fatigue-roll" value="<%= current_user.fatigue %>" max="100"></progress><p>
+    <p>Money: <%= current_user.money %>₽<p>
+</h6>
+<h6 align="center", class="nav-item">
+
+        <button><%= link_to 'New Game', new_game_path, method: :new_game %></button>
+        <% if !@is_lose %>
+            <button><%= link_to "Save Game", new_slot_path %></button>
+        <% end %>
+        <button><%= link_to "Load Game", slots_path %></button>
     <li><%= link_to 'Go Job', go_job_path, method: :go_job if !@is_lose %></li>
     <li><%= link_to 'Contemplate nature', contemplate_nature_path, method: :сontemplate_nature if !@is_lose%></li>
     <li><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, method: :drink_wine_and_watch_tv_series if !@is_lose%></li>
