@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2021_12_02_125629) do
     t.datetime "remember_created_at"
     t.string "name"
     t.integer "health", default: 100
-    t.integer "mana", default: 0
-    t.integer "happiness", default: 0
+    t.integer "mana", default: 30
+    t.integer "happiness", default: 5
     t.integer "fatigue", default: 0
-    t.integer "money", default: 1000
+    t.integer "money", default: 5000
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
