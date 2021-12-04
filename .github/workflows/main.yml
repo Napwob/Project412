@@ -14,10 +14,10 @@ jobs:
           POSTGRES_PASSWORD: postgres
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Ruby 3.0.2
+      - name: Set up Ruby 3.0.2p107
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 3.0.2
+          ruby-version: 3.0.2p107
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
