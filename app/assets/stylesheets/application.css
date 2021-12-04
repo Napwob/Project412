@@ -25,6 +25,11 @@
  *= require_self
  */
 
+  button{
+    border-radius: 19px;
+    text-decoration:none; 
+  }
+
   .health-roll {
     -webkit-appearance: none;
     width: 200px;
