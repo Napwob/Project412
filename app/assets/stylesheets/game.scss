@@ -3,7 +3,6 @@
   }
 
     p {
-                color: red;
                 text-align: center;
                 font-size: 18pt;
                 text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
@@ -27,6 +26,26 @@
               text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
                             #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
                             #cad5e2 5px 5px 0;
+            }
+
+            .health{
+              color: red;
+            }
+            .mana{
+              color: blue;
+            }
+            .happines{
+              color: orange;
+            }
+            .fatigue{
+              color: rgba(117, 78, 36, 0.849);
+            }
+
+            .sadness{
+              color: black;
+            }
+            .money{
+              color: green;
             }
             button { 
                     border: 3px solid #4A90E2;
