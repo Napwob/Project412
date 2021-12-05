@@ -6,7 +6,6 @@
                 color: red;
                 text-align: center;
                 font-size: 18pt;
-                font-weight: bold;
                 text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
                             #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
                             #cad5e2 5px 5px 0;
@@ -14,9 +13,18 @@
 
             h2 {
                 font-weight: bold;
-                font-size: 32pt;
+                font-size: 26pt;
                 text-align: center;
                 text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
+                            #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
+                            #cad5e2 5px 5px 0;
+            }
+
+            .greetings {
+              font-size: 80pt;
+              color: blue;
+              font-weight: bold;
+              text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
                             #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
                             #cad5e2 5px 5px 0;
             }
