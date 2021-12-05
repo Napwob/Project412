@@ -21,19 +21,19 @@ RSpec.describe User, type: :model do
       (user = build(:user)).init_stats
       user.money = 50_000
       expect(user.check_win_lose).to eq \
-        'You win! Now Valera can buy notebook and work at home, drinking while working.'
+        'Valera say: Finally!'
     end
 
     it 'defeat_game_depression' do
       (user = build(:user)).init_stats
       user.happiness = -10
-      expect(user.check_win_lose).to eq 'You defeated! Valera was found dead.'
+      expect(user.check_win_lose).to eq 'Valera say: Farewell, cruel world...'
     end
 
     it 'defeat_game_bad_health' do
       (user = build(:user)).init_stats
       user.health = 0
-      expect(user.check_win_lose).to eq 'You defeated! Valera was found dead.'
+      expect(user.check_win_lose).to eq 'Valera say: Farewell, cruel world...'
     end
 
     it 'continue_game' do
@@ -54,62 +54,62 @@ RSpec.describe User, type: :model do
   describe '.GameActions' do
     it 'go_job_success' do
       (user = build(:user)).init_stats
-      expect(user.go_job).to eq 'Valera goes to work'
+      expect(user.go_job).to eq 'Valera say: Its been a hard day'
     end
 
     it 'go_job_failed' do
       (user = build(:user)).init_stats
       user.mana = 80
-      expect(user.go_job).to eq 'Valera cannot go to work because of his condition'
+      expect(user.go_job).to eq 'Valera say: Jjob?... W-what is it?'
     end
 
     it 'contemplate_nature' do
       (user = build(:user)).init_stats
-      expect(user.contemplate_nature).to eq 'Valera contemplates nature'
+      expect(user.contemplate_nature).to eq 'Valera say: I wandered lonely as a cloud'
     end
 
     it 'drink_wine_and_watch_tv_series' do
       (user = build(:user)).init_stats
-      expect(user.drink_wine_and_watch_tv_series).to eq 'Valera drinks wine and watches the TV series'
+      expect(user.drink_wine_and_watch_tv_series).to eq 'Valera say: Ta-ta-tadada-ta...'
     end
 
     it 'go_to_the_bar' do
       (user = build(:user)).init_stats
-      expect(user.go_to_the_bar).to eq 'Valera goes to the bar'
+      expect(user.go_to_the_bar).to eq 'Valera say: Beer or not two beer?'
     end
 
     it 'drink_with_marginal_people_success' do
       (user = build(:user)).init_stats
-      expect(user.drink_with_marginal_people).to eq 'Valera drinks with marginal people'
+      expect(user.drink_with_marginal_people).to eq 'Valera say: Oj, MOROZ MOROOOOOZ...'
     end
 
     it 'drink_with_marginal_people_failed' do
       (user = build(:user)).init_stats
       user.money = 149
-      expect(user.drink_with_marginal_people).to eq 'Valera cannot drink with marginal people, due to the fact that he does not have enough money'
+      expect(user.drink_with_marginal_people).to eq 'Valera say: Sorry, out of money'
     end
 
     it 'sleep_good' do
       (user = build(:user)).init_stats
-      expect(user.sleep).to eq 'Valera is sleeping good'
+      expect(user.sleep).to eq 'Valera say: zZzZzZ...'
     end
 
     it 'sleep_bad' do
       (user = build(:user)).init_stats
       user.mana = 60
-      expect(user.sleep).to eq 'Valera is sleeping bad'
+      expect(user.sleep).to eq 'Valera say: zzz...one more shot...zzz'
     end
 
     it 'sing_good' do
       (user = build(:user)).init_stats
       user.mana = 50
-      expect(user.sing_in_the_subway).to eq 'Valera sing in the subway really nice'
+      expect(user.sing_in_the_subway).to eq 'Valera say: IM GONNA ROCK!!!'
     end
 
     it 'sing_bad' do
       (user = build(:user)).init_stats
       user.mana = 10
-      expect(user.sing_in_the_subway).to eq 'Valera sing in the subway not bad'
+      expect(user.sing_in_the_subway).to eq 'Valera say: IM GONNA ROCK!!!'
     end
   end
 end

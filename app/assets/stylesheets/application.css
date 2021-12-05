@@ -9,7 +9,85 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *progress {
+    border: none;
+    width: 200px;
+    height: 20px;
+    background: white;
+  }
+  
+  progress::-moz-progress-bar {
+    background: red;
+    initial-value: "<%= current_user.health %>";
+  }
+  
  *= require_tree .
  *= require_self
  */
+
+  button{
+    border-radius: 19px;
+    text-decoration:none; 
+  }
+
+  .health-roll {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 20px;
+    border-radius: 30px;
+  }
+  .mana-roll {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 20px;
+    border-radius: 30px;
+  }
+  .fatigue-roll {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 20px;
+    border-radius: 30px;
+  }
+  .happiness1-roll {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 20px;
+    border-radius: 30px;
+  }
+  .happiness2-roll {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 20px;
+
+  }
+  progress.health-roll::-moz-progress-bar  {
+    background: red;
+    border-radius: 30px;
+  }
+  progress.mana-roll::-moz-progress-bar {
+    background: blue;
+    border-radius: 30px;
+  }
+  progress.fatigue-roll::-moz-progress-bar {
+    background: rgba(117, 78, 36, 0.849);
+    border-radius: 30px;
+  }
+  progress.happiness1-roll::-moz-progress-bar {
+    background: yellow;
+    border-radius: 30px;
+  }
+  progress.happiness2-roll::-moz-progress-bar {
+    background: black;
+  }
+
+  .input {
+    background-color: rgb(240, 240, 240);
+    border: 3px solid rgb(200, 0, 0);
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 130%;
+    height: 16px;
+    margin: 0.75%;
+    padding: 5px 5px 5px;
+    }
+  
