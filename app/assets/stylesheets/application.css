@@ -97,4 +97,11 @@
   .round{
     border-radius: 19px;
   }
+
+  .unhappy {
+    border-radius: 19px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 20pt;
+  }
   
