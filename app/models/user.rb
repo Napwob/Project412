@@ -88,7 +88,7 @@ class User < ApplicationRecord
     if money < 20
       'Valera say: Sorry, out of money'
     else
-      apply_stats(-5, 30, -1, 10, -20)
+      apply_stats(-5, 30, 1, 10, -20)
       'Valera say: Ta-ta-tadada-ta...'
     end
   end
@@ -97,7 +97,7 @@ class User < ApplicationRecord
     if money < 100
       'Valera say: Sorry, out of money'
     else
-      apply_stats(-10, 60, 1, 40, -100)
+      apply_stats(-10, 60, 2, 40, -100)
       'Valera say: Beer or not two beer?'
     end
   end
