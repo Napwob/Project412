@@ -5,12 +5,12 @@
   
   <div align="center">
      <%= f.label :name %><br />
-     <%= f.text_field :name, autofocus: true %>
+     <%= f.text_field :name, autofocus: true, class: "round"%>
   </div>
 
   <div class="field" align="center">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "round" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,7 +19,7 @@
 
   <div class="field" align="center">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "round" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -28,22 +28,22 @@
 
   <div class="field" align="center">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "round" %>
   </div>
 
   <div class="field" align="center">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "round" %>
   </div>
 
   <div class="actions" align="center">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "round" %>
   </div>
 <% end %>
 
 <h3 align="center">Cancel my account</h3>
  <div class="actions" align="center">
-    <p align="center">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <p align="center">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "round" %></p>
 
     <%= link_to "Back", :back %>
 </div>

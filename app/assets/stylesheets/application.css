@@ -24,6 +24,9 @@
  *= require_tree .
  *= require_self
  */
+  li{
+    list-style-type: none;
+  }
 
   button{
     border-radius: 19px;
@@ -90,4 +93,8 @@
     margin: 0.75%;
     padding: 5px 5px 5px;
     }
+
+  .round{
+    border-radius: 19px;
+  }
   

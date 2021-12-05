@@ -1,4 +1,4 @@
-  <h1>Load Game</h1>
+  <h2>Load Game</h2>
 
   <div align="center">
     <%= form_with scope: :load_form, url: "load_game" do |f| %>
@@ -11,8 +11,8 @@
               <div class="container"><%= flash.alert %></div>
             </td>
       <li class="nav-item">
+        <li><%= f.submit :"Load Game", class: "button", value: "Load Game", class: "round-marginal" %></li>
         <li><%= link_to "Cancel", game_path %></li>
-        <li><%= f.submit :"Load Game", class: "button", value: "Load Game" %></li>
       </li> 
     <% end %>
   </div>
