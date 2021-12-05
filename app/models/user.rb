@@ -57,7 +57,7 @@ class User < ApplicationRecord
   end
 
   def check_win_lose
-    if self.money > 30_000
+    if self.money >= 50_000
       save
 
       'Valera say: Finally!'
