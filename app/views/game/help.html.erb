@@ -4,59 +4,87 @@
   <meta charset="utf-8" />
 </head>
     <body>
-        <h1>RULES</h1>
+        <div class = "six"><h1><span>RULES</span></h1><table class = "tab-cent" align="right">
+            <tr>
+                <th>
+                    <h4>Sing in the subway :</h4>
+                </th>
+                <th>
+                    <h4>Sleep:</h4>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                   <div class = "p_help">+1 Happiness</div>
+                    <div class = "p_help">+10 Mana</div>
+                    <div class = "p_help">+$10 (+ $ 50 more if initially mana was > 40 & <70 ) </div>
+                    <div class = "p_help">+20 Fatigue</div>
+                </td>
+                <td>
+                   <div class = "p_help">+90 Health (if mana was < 30)</div>
+                    <div class = "p_help">-3 Happiness</div>
+                    <div class = "p_help">-50 Mana </div>
+                    <div class = "p_help">-70 Fatigue</div>
+                </td>
+        </table></div>
+
+        <table>
+        <tr>
+            <th>
+                <h4>Go to job</h4><h6>Condition: Only possible if mana <50 and fatigue <10 </h6> 
+            </th>
+            <th>
+                <h4>Contemplate nature :</h4>
+            </th>
+            <th>
+                <h4>Drink wine and watch TV series :</h4>
+            </th>
+            <th>
+                <h4>Go to a bar :</h4>
+            </th>
+            <th>
+                <h4>Drink with marginal people :</h4>
+            </th>
+
+        </tr>
+
+        <tr>
+            <td> 
+                <div class = "p_help">-5 Happiness</div>
+                <div class = "p_help">-30 Mana</div>
+                <div class = "p_help">+$100</div>
+                <div class = "p_help">+70 Fatigue</div>
+            </td>
+            <td>
+                <div class = "p_help">+1 Happiness</div>
+                <div class = "p_help">-10 Mana</div>
+            <div class = "p_help">+10 Fatigue</div>
+            </td>
+            <td>
+                <div class = "p_help">+1 Happiness</div>
+                <div class = "p_help">+30 Mana</div>
+                <div class = "p_help">+10 Fatigue</div>
+                <div class = "p_help">-5 Health</div>
+                <div class = "p_help">-$20</div>
+            </td>
+            <td>
+               <div class = "p_help">+2 Happiness</div>
+                <div class = "p_help">+60 Mana</div>
+                <div class = "p_help">+40 Fatigue</div>
+                <div class = "p_help">-10 Health</div>
+                <div class = "p_help">-$100</div>
+            </td>
+            <td>
+                <div class = "p_help">+5 Happiness</div>
+                <div class = "p_help">-80 Health</div>
+                <div class = "p_help">+90 Mana</div>
+                <div class = "p_help">+80 Fatigue</div>
+                <div class = "p_help">-$150</div>
+            </td>
+        </tr> 
+        </table>
         <br>
-        <h4>Go to job</h4>
-        <h6>Condition: Only possible if mana <50 and fatigue <10 </h6>
-        <p>-5 Happiness</p>
-        <p>-30 Mana</p>
-        <p>+$100</p>
-        <p>+70 Fatigue</p>
-        <hr>
-        <h4>Contemplate nature :</h4>
-        <p>+1 Happiness</p>
-        <p>-10 Mana</p>
-        <p>+10 Fatigue</p>
-        <hr>
-        <br>
-        <h4>Drink wine and watch TV series :</h4>
-        <p>+1 Happiness</p>
-        <p>+30 Mana</p>
-        <p>+10 Fatigue</p>
-        <p>-5 Health</p>
-        <p>-$20</p>
-        <hr>
-        <br>
-        <h4>Go to a bar :</h4>
-        <p>+2 Happiness</p>
-        <p>+60 Mana</p>
-        <p>+40 Fatigue</p>
-        <p>-10 Health</p>
-        <p>-$100</p>
-        <hr>
-        <br>
-        <h4>Drink with marginal people :</h4>
-        <p>+5 Happiness</p>
-        <p>-80 Health</p>
-        <p>+90 Mana</p>
-        <p>+80 Fatigue</p>
-        <p>-$150</p>
-        <hr>
-        <br>
-        <h4>Sing in the subway :</h4>
-        <p>+1 Happiness</p>
-        <p>+10 Mana</p>
-        <p>+$10 (+ $ 50 more if initially mana was > 40 & <70 )</p>
-        <p>+20 Fatigue</p>
-        <hr>
-        <br>
-        <h4>Sleep:</h4>
-        <p>+90 Health (if mana was < 30)</p>
-        <p>-3 Happiness</p>
-        <p>-50 Mana</p>
-        <p>-70 Fatigue</p>
         <li><%= link_to 'Back', :back %></li>
     </body>
 </html>
-
 
