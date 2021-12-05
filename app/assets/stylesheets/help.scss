@@ -5,7 +5,7 @@
   right: 20px;
   margin-left: 20px;
 }
-h4 {
+.style_h4 {
   color: #000000; 
   font-family: ‘Droid serif’, serif;
   font-size: 28px;
@@ -19,7 +19,7 @@ h4 {
       #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
       #cad5e2 5px 5px 0;
 }
-h6 {
+.style_h6 {
   color: #B22222; 
   font-family: ‘Droid serif’, serif;
   font-size: 14px;
@@ -108,4 +108,19 @@ td {
   margin: auto;
   margin-top: 20px;
   margin-right: 20px;
+}
+.descp {
+  text-align: left;
+  color: #000000;
+  text-indent: 25px;
+  margin-left: 20px;
+  font-size: 18pt;
+  text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
+              #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
+              #cad5e2 5px 5px 0;
+}
+.back {
+  margin-left: 25px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
