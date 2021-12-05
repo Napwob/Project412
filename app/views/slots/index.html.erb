@@ -4,7 +4,7 @@
     <%= form_with scope: :load_form, url: "load_game" do |f| %>
         <tr>
           <td align="center" colspan="3">
-            <%= f.select :saves_list, @save_names_list, {:multiple => false}, {class: "box"} %>
+            <%= f.select :saves_list, @save_names_list, {:multiple => false}, {class: "list-width "}  %>
 		  </td>
         </tr>
             <td colspan="2" align="center">
