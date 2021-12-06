@@ -68,24 +68,39 @@ RSpec.describe User, type: :model do
       expect(user.contemplate_nature).to eq 'Valera say: I wandered lonely as a cloud'
     end
 
-    it 'drink_wine_and_watch_tv_series' do
+    it 'drink_wine_and_watch_tv_series_success' do
       (user = build(:user)).init_stats
+      user.money = 200
       expect(user.drink_wine_and_watch_tv_series).to eq 'Valera say: Ta-ta-tadada-ta...'
     end
 
-    it 'go_to_the_bar' do
+    it 'drink_wine_and_watch_tv_series_fail' do
       (user = build(:user)).init_stats
+      user.money = 199
+      expect(user.drink_wine_and_watch_tv_series).to eq 'Valera say: Sorry, out of money'
+    end
+
+    it 'go_to_the_bar_success' do
+      (user = build(:user)).init_stats
+      user.money = 250
       expect(user.go_to_the_bar).to eq 'Valera say: Beer or not two beer?'
+    end
+
+    it 'go_to_the_bar_fail' do
+      (user = build(:user)).init_stats
+      user.money = 249
+      expect(user.go_to_the_bar).to eq 'Valera say: Sorry, out of money'
     end
 
     it 'drink_with_marginal_people_success' do
       (user = build(:user)).init_stats
+      user.money = 1500
       expect(user.drink_with_marginal_people).to eq 'Valera say: Oj, MOROZ MOROOOOOZ...'
     end
 
     it 'drink_with_marginal_people_failed' do
       (user = build(:user)).init_stats
-      user.money = 149
+      user.money = 1490
       expect(user.drink_with_marginal_people).to eq 'Valera say: Sorry, out of money'
     end
 
@@ -103,7 +118,7 @@ RSpec.describe User, type: :model do
     it 'sing_good' do
       (user = build(:user)).init_stats
       user.mana = 50
-      expect(user.sing_in_the_subway).to eq 'Valera say: IM GONNA ROCK!!!'
+      expect(user.sing_in_the_subway).to eq 'Valera say: Near, far, wherever you are...'
     end
 
     it 'sing_bad' do

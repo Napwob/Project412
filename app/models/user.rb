@@ -85,7 +85,7 @@ class User < ApplicationRecord
   end
 
   def drink_wine_and_watch_tv_series
-    if money < 20
+    if money < 200
       'Valera say: Sorry, out of money'
     else
       apply_stats(-5, 30, 1, 10, -20)
@@ -94,7 +94,7 @@ class User < ApplicationRecord
   end
 
   def go_to_the_bar
-    if money < 100
+    if money < 250
       'Valera say: Sorry, out of money'
     else
       apply_stats(-10, 60, 2, 40, -100)
@@ -103,18 +103,17 @@ class User < ApplicationRecord
   end
 
   def drink_with_marginal_people
-    if money < 150
+    if money < 1500
       'Valera say: Sorry, out of money'
     else
-      apply_stats(-80, 90, 5, 80, -150)
+      apply_stats(-80, 90, 5, 80, -1500)
       'Valera say: Oj, MOROZ MOROOOOOZ...'
     end
   end
 
   def sing_in_the_subway
-    if fatigue > 80
-      'Valera say: I need to sleep, not sing'
-    elsif mana.between?(60, 30)
+    'Valera say: I need to sleep, not sing' if fatigue > 80
+    if (mana > 30) && (mana < 70)
       apply_stats(0, 0, 0, 0, +50)
       'Valera say: Near, far, wherever you are...'
     else
