@@ -31,17 +31,17 @@ class User < ApplicationRecord
     fix_stats
     save
   end
-  
+
   def fix_mana
-    return unless self.mana.positive?
+    if self.mana.negative?
+      self.mana = 0
+      self.happiness -= 1
+    end
 
-    self.mana = 0
-    self.happiness -= 1
-
-    return unless self.mana < 100
-
-    self.health = self.health - ((self.mana - 100) / 4)
-    self.mana = 100
+    if self.mana > 100
+      self.health = self.health - ((self.mana - 100) / 4)
+      self.mana = 100
+    end
   end
 
   def fix_stats
