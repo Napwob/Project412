@@ -3,7 +3,7 @@
 This files implements Marginal Valera game using "Ruby on Rails"
 ### Require  
  * Ruby 3.0.3
-### PostgreSQL instalation
+### PostgreSQL installation
  * sudo apt install postgresql
  * sudo gem install pg
  * sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
