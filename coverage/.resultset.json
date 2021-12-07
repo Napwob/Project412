@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/ilya/Project412/app/models/user.rb": {
+      "/home/napwob/Project412/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -78,7 +78,7 @@
           null
         ]
       },
-      "/home/ilya/Project412/app/models/user_actions.rb": {
+      "/home/napwob/Project412/app/models/user_actions.rb": {
         "lines": [
           null,
           null,
@@ -149,7 +149,7 @@
           null
         ]
       },
-      "/home/ilya/Project412/app/models/application_record.rb": {
+      "/home/napwob/Project412/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -158,7 +158,7 @@
           null
         ]
       },
-      "/home/ilya/Project412/app/helpers/application_helper.rb": {
+      "/home/napwob/Project412/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -166,7 +166,7 @@
           null
         ]
       },
-      "/home/ilya/Project412/app/helpers/home_helper.rb": {
+      "/home/napwob/Project412/app/helpers/home_helper.rb": {
         "lines": [
           null,
           null,
@@ -174,7 +174,7 @@
           null
         ]
       },
-      "/home/ilya/Project412/app/models/slot.rb": {
+      "/home/napwob/Project412/app/models/slot.rb": {
         "lines": [
           null,
           null,
@@ -202,6 +202,6 @@
         ]
       }
     },
-    "timestamp": 1638871023
+    "timestamp": 1638886273
   }
 }
