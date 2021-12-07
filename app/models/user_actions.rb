@@ -17,7 +17,7 @@ module UserActions
   end
 
   def drink_wine_and_watch_tv_series
-    if money < 20
+    if money < 200
       'Valera say: Sorry, out of money'
     else
       apply_stats(-5, 30, 1, 10, -20)
@@ -26,7 +26,7 @@ module UserActions
   end
 
   def go_to_the_bar
-    if money < 100
+    if money < 250
       'Valera say: Sorry, out of money'
     else
       apply_stats(-10, 60, 2, 40, -100)
