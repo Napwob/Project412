@@ -28,10 +28,6 @@ Metrics/BlockLength:
     - 'spec/**/*_spec.rb'
     - 'config/routes.rb'
 
-Metrics/ClassLength:
-  Exclude:
-    - 'app/models/user.rb'
-
 Style/GuardClause:
   Exclude:
     - 'app/models/user.rb'
