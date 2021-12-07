@@ -35,7 +35,7 @@ module UserActions
   end
 
   def drink_with_marginal_people
-    if money < 150
+    if money < 1500
       'Valera say: Sorry, out of money'
     else
       apply_stats(-80, 90, 5, 80, -150)
@@ -46,7 +46,7 @@ module UserActions
   def sing_in_the_subway
     if fatigue > 80
       'Valera say: I need to sleep, not sing'
-    elsif mana.between?(60, 30)
+    elsif (mana > 30) && (mana < 60)
       apply_stats(0, 0, 0, 0, +50)
       'Valera say: Near, far, wherever you are...'
     else

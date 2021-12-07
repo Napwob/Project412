@@ -118,7 +118,7 @@ RSpec.describe User, type: :model do
     it 'sing_good' do
       (user = build(:user)).init_stats
       user.mana = 50
-      expect(user.sing_in_the_subway).to eq 'Valera say: IM GONNA ROCK!!!'
+      expect(user.sing_in_the_subway).to eq 'Valera say: Near, far, wherever you are...'
     end
 
     it 'sing_bad' do
