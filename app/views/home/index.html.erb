@@ -5,7 +5,7 @@
 <% if user_signed_in? %>
 	<h3 align="center"> 
 		<button class="nav-item">
-			<%= link_to "Game", "/game", class:'nav-link'%>
+			<%= link_to "Game", game_path, class:'nav-link'%>
 		</button>
 	</h3>
 <%else%>
