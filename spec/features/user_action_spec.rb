@@ -37,7 +37,7 @@ describe 'User' do
 
   it 'click Go Job' do
     visit game_path
-    click_on('Go Job')
+    click_link('Go Job')
     expect(page).to have_content('6250')
   end
 
