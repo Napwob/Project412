@@ -24,12 +24,12 @@
             <button><%= link_to "Save Game", new_slot_path, class: "link" %></button>
         <% end %>
         <button><%= link_to "Load Game", slots_path, class: "link" %></button>
-    <li><%= link_to 'Go Job', go_job_path, class: "link", method: :go_job if !@is_lose %></li>
-    <li><%= link_to 'Contemplate nature', contemplate_nature_path, class: "link", method: :сontemplate_nature if !@is_lose%></li>
-    <li><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, class: "link", method: :drink_wine_and_watch_tv_series if !@is_lose%></li>
-    <li><%= link_to 'Go to the bar', go_to_the_bar_path, class: "link", method: :go_to_the_bar if !@is_lose%></li>
-    <li><%= link_to 'Drink with marginal people', drink_with_marginal_people_path, class: "link", method: :drink_with_marginal_people if !@is_lose%></li> 
-    <li><%= link_to 'Sing in the subway', sing_in_the_subway_path, class: "link", method: :sing_in_the_subway if !@is_lose%></li>
-    <li><%= link_to 'Sleep', sleep_path, class: "link", method: :sleep if !@is_lose%></li>
+    <li><button class="new-button"><%= link_to 'Go Job', go_job_path, class: "link", method: :go_job if !@is_lose %></button></li>
+    <li><button class="new-button"><%= link_to 'Contemplate nature', contemplate_nature_path, class: "link", method: :сontemplate_nature if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, class: "link", method: :drink_wine_and_watch_tv_series if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Go to the bar', go_to_the_bar_path, class: "link", method: :go_to_the_bar if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Drink with marginal people', drink_with_marginal_people_path, class: "link", method: :drink_with_marginal_people if !@is_lose%></button></li> 
+    <li><button class="new-button"><%= link_to 'Sing in the subway', sing_in_the_subway_path, class: "link", method: :sing_in_the_subway if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Sleep', sleep_path, class: "link", method: :sleep if !@is_lose%></button></li>
 </h6> 
 

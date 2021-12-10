@@ -20,8 +20,7 @@ RSpec.describe User, type: :model do
     it 'testing for victory game' do
       (user = build(:user)).init_stats
       user.money = 50_000
-      expect(user.check_win_lose).to eq \
-        'Valera say: Finally!'
+      expect(user.check_win_lose).to eq 'Valera say: Finally!'
     end
 
     it 'testing for depression' do

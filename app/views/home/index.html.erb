@@ -1,7 +1,7 @@
 <% name = current_user.present? ? current_user.name : 'Stranger'%>
 <h1 align="center" class="greetings">VALERA</h1>
 <h2 align="center">BEST GAME EVER</h2>
-<h3 align="center">Welcome <%= name %></h3>
+<h3 align="center">Welcome, <%= name %></h3>
 <% if user_signed_in? %>
 	<h3 align="center"> 
 		<button class="nav-item">

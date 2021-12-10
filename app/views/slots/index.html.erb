@@ -4,14 +4,14 @@
     <%= form_with scope: :load_form, url: "load_game" do |f| %>
         <tr>
           <td align="center" colspan="3">
-            <%= f.select :saves_list, @save_names_list, {:multiple => false}, {class: "list-width "}  %>
-		  </td>
+            <%= f.select :saves_list, @save_names_list, {:multiple => false}, {class: "list-width"}  %>
+		      </td>
         </tr>
             <td colspan="2" align="center">
               <div class="container"><%= flash.alert %></div>
             </td>
       <li class="nav-item">
-        <li><%= f.submit :"Load Game", class: "button", value: "Load Game", class: "round-marginal" %></li>
+        <li><%= f.submit :"Load Game", value: "Load Game", class: "round-button-marginal" %></li>
         <li><%= link_to "Cancel", game_path %></li>
       </li> 
     <% end %>

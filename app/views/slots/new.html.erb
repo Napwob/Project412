@@ -3,13 +3,14 @@
   <div align="center">
     <%= form_with scope: :save_form, url: slots_path, local: true do |f| %>
         <li class="nav-item">
+          <%= f.label :name_save %><br />
           <td><%= f.text_field :name_save, class: "round" %></td>
         </li>
           <td colspan="2">
             <div align="center" class="round"><%= flash.alert %></div>
           </td>
       <li class="nav-item">
-        <li><%= f.submit :"Save Game", class: "button", value: "Save Game", class: "round-marginal" %></li>
+        <li><button class="new-button"><%= f.submit :"Save Game", value: "Save Game", class: "round" %></button></li>
         <li><%= link_to "Cancel", game_path %></li>
       </li> 
     <% end %>
