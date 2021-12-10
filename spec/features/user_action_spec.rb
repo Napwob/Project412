@@ -36,9 +36,51 @@ describe 'User' do
   end
 
   it 'click Go Job' do
-    visit game_path
+    make_default_stats
     click_link('Go Job')
-    expect(page).to have_content('6250')
+    expect(page).to have_content('Valera say: Its been a hard day') and have_content('Money: 6250₽')
+    # expect(page).to have_content('Money: 6250₽')
+  end
+
+  it 'click Contemplate nature' do
+    make_default_stats
+    click_link('Contemplate nature')
+    expect(page).to have_content('Valera say: I wandered lonely as a cloud')
+  end
+
+  it 'click Drink wine and watch TV series' do
+    make_default_stats
+    click_link('Drink wine and watch TV series')
+    expect(page).to have_content('Valera say: Ta-ta-tadada-ta...') and have_content('Money: 4800₽')
+    # expect(page).to have_content('Money: 4800₽')
+  end
+
+  it 'click Go to the bar' do
+    make_default_stats
+    click_link('Go to the bar')
+    expect(page).to have_content('Valera say: Beer or not two beer?') and have_content('Money: 4750₽')
+    # expect(page).to have_content('Money: 4750₽')
+  end
+
+  it 'click Drink with marginal people' do
+    make_default_stats
+    click_link('Drink with marginal people')
+    expect(page).to have_content('Valera say: Oj, MOROZ MOROOOOOZ...') and have_content('Money: 3500₽')
+    # expect(page).to have_content('Money: 3500₽')
+  end
+
+  it 'click Sing in the subway' do
+    make_default_stats
+    click_link('Sing in the subway')
+    expect(page).to have_content('Valera say: IM GONNA ROCK!!!') and have_content('Money: 5010₽')
+    # expect(page).to have_content('Money: 5010₽')
+  end
+
+  it 'click Sleep' do
+    make_default_stats
+    click_link('Sleep')
+    expect(page).to have_content('Valera say: zZzZzZ...') and have_content('Money: 5000₽')
+    # expect(page).to have_content('Money: 5000₽')
   end
 
   def create_user(name, email, password)
@@ -59,6 +101,11 @@ describe 'User' do
   def click_game
     visit root_path
     click_button 'Game'
+  end
+
+  def make_default_stats
+    visit game_path
+    click_link 'New Game'
   end
 
   def user_sees_notice(text)

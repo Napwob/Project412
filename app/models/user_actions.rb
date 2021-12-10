@@ -20,7 +20,7 @@ module UserActions
     if money < 200
       'Valera say: Sorry, out of money'
     else
-      apply_stats(-5, 30, 1, 10, -20)
+      apply_stats(-5, 30, 1, 10, -200)
       'Valera say: Ta-ta-tadada-ta...'
     end
   end
@@ -29,7 +29,7 @@ module UserActions
     if money < 250
       'Valera say: Sorry, out of money'
     else
-      apply_stats(-10, 60, 2, 40, -100)
+      apply_stats(-10, 60, 2, 40, -250)
       'Valera say: Beer or not two beer?'
     end
   end
@@ -38,7 +38,7 @@ module UserActions
     if money < 1500
       'Valera say: Sorry, out of money'
     else
-      apply_stats(-80, 90, 5, 80, -150)
+      apply_stats(-80, 90, 5, 80, -1500)
       'Valera say: Oj, MOROZ MOROOOOOZ...'
     end
   end
