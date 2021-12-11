@@ -14,7 +14,7 @@ This files implements Marginal Valera game using "Ruby on Rails"
  * rails db:migrate
 ### Rspec
  * rspec
-### Rspec
+### Rubocop
  * rubocop
  * rubocop -A # Auto-correct offenses
 ### Run
