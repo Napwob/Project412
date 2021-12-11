@@ -1,46 +1,46 @@
 require 'rails_helper'
 
 # RSpec.describe 'Signing in', type: :feature do
-describe 'Signing in' do
+describe 'Pages Interactions' do
   before do
     create :user, name: 'Username', email: 'person@example.com', password: 'password'
   end
 
-  it 'notifies the user if his email or password is invalid' do
+  it 'user signing in using invalid password' do
     sign_in_with 'person@example.com', 'wrong password'
     expect(page).to have_current_path(new_user_session_path, ignore_query: true)
   end
 
-  it 'and Signing Out' do
+  it 'user signing out' do
     sign_in_with 'person@example.com', 'password'
     click_link('Sign Out')
     expect(page).to have_current_path(root_path, ignore_query: true) and have_content('Welcome, Stranger')
   end
 
-  it 'signs the user in successfully with a valid email and password' do
+  it 'user signing in using valid email and password' do
     sign_in_with 'person@example.com', 'password'
     expect(page).to have_current_path(root_path, ignore_query: true)
   end
 
-  it 'and edit profile' do
+  it 'user edit own profile' do
     sign_in_with 'person@example.com', 'password'
     edit_data_with 'Username1', 'person@example.com', 'password'
-    expect(page).to have_content('Welcome, Username1')
+    expect(page).to have_current_path(root_path, ignore_query: true) and have_content('Welcome, Username1')
   end
 
-  it 'and click Help' do
+  it 'user click Help' do
     sign_in_with 'person@example.com', 'password'
     click_link('Help')
     expect(page).to have_current_path(help_path, ignore_query: true)
   end
 
-  it 'and click Game' do
+  it 'user click Game' do
     sign_in_with 'person@example.com', 'password'
     click_link('Game')
     expect(page).to have_current_path(game_path, ignore_query: true)
   end
 
-  it 'and in the Game click Sign Out' do
+  it 'user singing out after getting into Game' do
     sign_in_with 'person@example.com', 'password'
     click_link('Game')
     click_link('Sign Out')
