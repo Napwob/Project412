@@ -11,9 +11,9 @@ describe 'Signing in' do
     expect(page).to have_current_path(new_user_session_path, ignore_query: true)
   end
 
-  it 'notifies the user if his email or password is invalid' do
+  it 'and Signing Out' do
     sign_in_with 'person@example.com', 'password'
-    click_link("Sign Out")
+    click_link('Sign Out')
     expect(page).to have_current_path(root_path, ignore_query: true) and have_content('Welcome, Stranger')
   end
 
