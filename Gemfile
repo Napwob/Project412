@@ -35,6 +35,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
+  gem 'fuubar'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false

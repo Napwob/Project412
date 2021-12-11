@@ -1,86 +1,97 @@
 require 'rails_helper'
 
-# RSpec.describe 'User', type: :feature do
-describe 'Game Actions' do
+describe 'Actions' do
   before do
     create_user 'Username', 'person@example.com', 'password'
-    click_game
+    visit game_path
   end
 
-  it 'correct user initialisation' do
+  it 'check correctance of stats initialisations' do
     visit game_path
     expect(page).to have_css('p', text: 'Money: 5000₽')
   end
 
-  it 'when user click Save Game and use non-empty savename' do
-    visit new_slot_path
-    fill_in 'Name save', with: 'Save 1'
-    click_button 'Save Game'
-    expect(page).to have_current_path(game_path, ignore_query: true)
+  describe '.Save Game action' do
+    it 'when user click Save Game and use non-empty savename' do
+      visit new_slot_path
+      fill_in 'Name save', with: 'Save 1'
+      click_button 'Save Game'
+      expect(page).to have_current_path(game_path, ignore_query: true)
+    end
+
+    it 'when user click Save Game and use empty savename' do
+      visit new_slot_path
+      fill_in 'Name save', with: ''
+      click_button 'Save Game'
+      user_sees_notice 'Invalid name save!'
+    end
   end
 
-  it 'when user click Save Game and use empty savename' do
-    visit new_slot_path
-    fill_in 'Name save', with: ''
-    click_button 'Save Game'
-    expect(page).to have_content('Invalid name save!')
-    # expect(page).to have_css 'flash.alert',text:'Invalid name save!'
+  describe '.Load Game action' do
+    it 'when user click Load Game after save' do
+      visit new_slot_path
+      fill_in 'Name save', with: 'Save 1'
+      click_button 'Save Game'
+      visit slots_path
+      expect(page).to have_content('Save 1')
+    end
   end
 
-  it 'when user click Load Game after save' do
-    visit new_slot_path
-    fill_in 'Name save', with: 'Save 1'
-    click_button 'Save Game'
-    visit slots_path
-    expect(page).to have_content('Save 1')
+  describe '.New Game action' do
+    it 'when user click New Game after some actions' do
+      click_link 'Go Job'
+      click_link 'New Game'
+      expect(page).to have_css('p', text: 'Money: 5000₽')
+    end
   end
 
-  it 'when user click Go Job' do
-    make_default_stats
-    click_link('Go Job')
-    expect(page).to have_content('Valera say: Its been a hard day') and have_content('Money: 6250₽')
-    # expect(page).to have_content('Money: 6250₽')
+  describe '.Go Job action' do
+    it 'when user click Go Job' do
+      click_link 'Go Job'
+      user_sees_notice 'Valera say: Its been a hard day'
+    end
   end
 
-  it 'when user click Contemplate nature' do
-    make_default_stats
-    click_link('Contemplate nature')
-    expect(page).to have_content('Valera say: I wandered lonely as a cloud')
+  describe '.Contemplate nature action' do
+    it 'when user click Contemplate nature' do
+      click_link 'Contemplate nature'
+      user_sees_notice 'Valera say: I wandered lonely as a cloud'
+    end
   end
 
-  it 'when user click Drink wine and watch TV series' do
-    make_default_stats
-    click_link('Drink wine and watch TV series')
-    expect(page).to have_content('Valera say: Ta-ta-tadada-ta...') and have_content('Money: 4800₽')
-    # expect(page).to have_content('Money: 4800₽')
+  describe '.Drink wine and watch TV series action' do
+    it 'when user click Drink wine and watch TV series' do
+      click_link 'Drink wine and watch TV series'
+      user_sees_notice 'Valera say: Ta-ta-tadada-ta...'
+    end
   end
 
-  it 'when user click Go to the bar' do
-    make_default_stats
-    click_link('Go to the bar')
-    expect(page).to have_content('Valera say: Beer or not two beer?') and have_content('Money: 4750₽')
-    # expect(page).to have_content('Money: 4750₽')
+  describe '.Go to the bar action' do
+    it 'when user click Go to the bar' do
+      click_link 'Go to the bar'
+      user_sees_notice 'Valera say: Beer or not two beer?'
+    end
   end
 
-  it 'when user click Drink with marginal people' do
-    make_default_stats
-    click_link('Drink with marginal people')
-    expect(page).to have_content('Valera say: Oj, MOROZ MOROOOOOZ...') and have_content('Money: 3500₽')
-    # expect(page).to have_content('Money: 3500₽')
+  describe '.Drink with marginal people action' do
+    it 'when user click Drink with marginal people' do
+      click_link 'Drink with marginal people'
+      user_sees_notice 'Valera say: Oj, MOROZ MOROOOOOZ...'
+    end
   end
 
-  it 'when user click Sing in the subway' do
-    make_default_stats
-    click_link('Sing in the subway')
-    expect(page).to have_content('Valera say: IM GONNA ROCK!!!') and have_content('Money: 5010₽')
-    # expect(page).to have_content('Money: 5010₽')
+  describe '.Sing in the subway action' do
+    it 'when user click Sing in the subway' do
+      click_link 'Sing in the subway'
+      user_sees_notice 'Valera say: IM GONNA ROCK!!!'
+    end
   end
 
-  it 'when user click Sleep' do
-    make_default_stats
-    click_link('Sleep')
-    expect(page).to have_content('Valera say: zZzZzZ...') and have_content('Money: 5000₽')
-    # expect(page).to have_content('Money: 5000₽')
+  describe '.Sleep action' do
+    it 'when user click Sleep' do
+      click_link('Sleep')
+      user_sees_notice 'Valera say: zZzZzZ...'
+    end
   end
 
   def create_user(name, email, password)
@@ -104,15 +115,23 @@ describe 'Game Actions' do
   end
 
   def make_default_stats
-    visit game_path
     click_link 'New Game'
-  end
-
-  def user_sees_notice(text)
-    expect(page).to have_css 'flash.notice', text: text
   end
 
   def reload_page
     visit current_path
+  end
+
+  def user_sees_notice(text)
+    expect(page).to have_content text
+  end
+
+  def edit_data_with(name, email, password)
+    visit edit_user_registration_path
+    fill_in 'Name', with: name
+    fill_in 'Email', with: email
+    fill_in 'Password confirmation', with: password
+    fill_in 'Current password', with: password
+    click_button 'Update'
   end
 end
