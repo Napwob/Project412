@@ -8,20 +8,24 @@ describe 'Signing in' do
 
   it 'notifies the user if his email or password is invalid' do
     sign_in_with 'person@example.com', 'wrong password'
-    visit root_path
-    expect(page).to have_selector(:link_or_button, 'Please, sign in to play')
+    expect(page).to have_current_path(new_user_session_path, ignore_query: true)
   end
 
   it 'signs the user in successfully with a valid email and password' do
     sign_in_with 'person@example.com', 'password'
-    visit root_path
-    expect(page).to have_selector(:link_or_button, 'Game')
+    expect(page).to have_current_path(root_path, ignore_query: true)
   end
 
   it 'and edit profile' do
     sign_in_with 'person@example.com', 'password'
     edit_data_with 'Username1', 'person@example.com', 'password'
     expect(page).to have_content('Welcome, Username1')
+  end
+
+  it 'and click Help' do
+    sign_in_with 'person@example.com', 'password'
+    click_link('Help')
+    expect(page).to have_current_path(help_path, ignore_query: true)
   end
 
   def edit_data_with(name, email, password)
@@ -31,6 +35,12 @@ describe 'Signing in' do
     fill_in 'Password confirmation', with: password
     fill_in 'Current password', with: password
     click_button 'Update'
+  end
+
+  def delete_profile
+    visit edit_user_registration_path
+    click_button 'Cancel my account'
+    click_button 'OK'
   end
 
   def sign_in_with(email, password)

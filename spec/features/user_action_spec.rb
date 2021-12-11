@@ -17,7 +17,7 @@ describe 'User' do
       visit new_slot_path
       fill_in 'Name save', with: 'Save 1'
       click_button 'Save Game'
-      expect(page).to have_content('Valera Life Stats')
+      expect(page).to have_current_path(game_path, ignore_query: true)
     end
 
     it 'Load Game after save' do
