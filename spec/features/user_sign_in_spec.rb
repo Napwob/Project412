@@ -34,6 +34,19 @@ describe 'Signing in' do
     expect(page).to have_current_path(help_path, ignore_query: true)
   end
 
+  it 'and click Game' do
+    sign_in_with 'person@example.com', 'password'
+    click_link('Game')
+    expect(page).to have_current_path(game_path, ignore_query: true)
+  end
+
+  it 'and in the Game click Sign Out' do
+    sign_in_with 'person@example.com', 'password'
+    click_link('Game')
+    click_link('Sign Out')
+    expect(page).to have_current_path(root_path, ignore_query: true)
+  end
+
   def edit_data_with(name, email, password)
     visit edit_user_registration_path
     fill_in 'Name', with: name
@@ -41,12 +54,6 @@ describe 'Signing in' do
     fill_in 'Password confirmation', with: password
     fill_in 'Current password', with: password
     click_button 'Update'
-  end
-
-  def delete_profile
-    visit edit_user_registration_path
-    click_button 'Cancel my account'
-    click_button 'OK'
   end
 
   def sign_in_with(email, password)

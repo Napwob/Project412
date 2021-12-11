@@ -13,6 +13,7 @@ describe 'User' do
   end
 
   describe '.Click action' do
+
     it 'Save Game' do
       visit new_slot_path
       fill_in 'Name save', with: 'Save 1'
