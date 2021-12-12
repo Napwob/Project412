@@ -75,7 +75,7 @@ describe 'Path' do
   end
 
   describe '#root_path' do
-    it 'when unlogged user click Please, sign in to play' do
+    it 'when unlogged user click Please sign in to play' do
       visit root_path
       click_link 'Please, sign in to play'
       expect(page).to have_current_path(new_user_session_path, ignore_query: true)
