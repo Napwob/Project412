@@ -11,7 +11,7 @@ describe 'Actions' do
     expect(page).to have_css('p', text: 'Money: 5000₽')
   end
 
-  describe '.Save Game action' do
+  describe '#Save Game' do
     it 'when user click Save Game and use non-empty savename' do
       visit new_slot_path
       fill_in 'Name save', with: 'Save 1'
@@ -27,7 +27,7 @@ describe 'Actions' do
     end
   end
 
-  describe '.Load Game action' do
+  describe '#Load Game' do
     it 'when user click Load Game after save' do
       visit new_slot_path
       fill_in 'Name save', with: 'Save 1'
@@ -37,7 +37,7 @@ describe 'Actions' do
     end
   end
 
-  describe '.New Game action' do
+  describe '#New Game' do
     it 'when user click New Game after some actions' do
       click_link 'Go Job'
       click_link 'New Game'
@@ -45,49 +45,49 @@ describe 'Actions' do
     end
   end
 
-  describe '.Go Job action' do
+  describe '#Go Job' do
     it 'when user click Go Job' do
       click_link 'Go Job'
       user_sees_notice 'Valera say: Its been a hard day'
     end
   end
 
-  describe '.Contemplate nature action' do
+  describe '#Contemplate nature' do
     it 'when user click Contemplate nature' do
       click_link 'Contemplate nature'
       user_sees_notice 'Valera say: I wandered lonely as a cloud'
     end
   end
 
-  describe '.Drink wine and watch TV series action' do
+  describe '#Drink wine and watch TV series' do
     it 'when user click Drink wine and watch TV series' do
       click_link 'Drink wine and watch TV series'
       user_sees_notice 'Valera say: Ta-ta-tadada-ta...'
     end
   end
 
-  describe '.Go to the bar action' do
+  describe '#Go to the bar' do
     it 'when user click Go to the bar' do
       click_link 'Go to the bar'
       user_sees_notice 'Valera say: Beer or not two beer?'
     end
   end
 
-  describe '.Drink with marginal people action' do
+  describe '#Drink with marginal people' do
     it 'when user click Drink with marginal people' do
       click_link 'Drink with marginal people'
       user_sees_notice 'Valera say: Oj, MOROZ MOROOOOOZ...'
     end
   end
 
-  describe '.Sing in the subway action' do
+  describe '#Sing in the subway' do
     it 'when user click Sing in the subway' do
       click_link 'Sing in the subway'
       user_sees_notice 'Valera say: IM GONNA ROCK!!!'
     end
   end
 
-  describe '.Sleep action' do
+  describe '#Sleep' do
     it 'when user click Sleep' do
       click_link('Sleep')
       user_sees_notice 'Valera say: zZzZzZ...'
@@ -112,14 +112,6 @@ describe 'Actions' do
   def click_game
     visit root_path
     click_button 'Game'
-  end
-
-  def make_default_stats
-    click_link 'New Game'
-  end
-
-  def reload_page
-    visit current_path
   end
 
   def user_sees_notice(text)

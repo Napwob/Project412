@@ -7,7 +7,7 @@ describe 'Path' do
     create :user, name: 'Username', email: 'person@example.com', password: 'password'
   end
 
-  describe '.new_user_session_path' do
+  describe '#new_user_session_path' do
     it 'user signing in using invalid password' do
       sign_in_with 'person@example.com', 'wrong password'
       expect(page).to have_current_path(new_user_session_path, ignore_query: true)
@@ -19,7 +19,7 @@ describe 'Path' do
     end
   end
 
-  describe '.destroy_user_session_path' do
+  describe '#destroy_user_session_path' do
     it 'user signing out' do
       sign_in_with 'person@example.com', 'password'
       click_link('Sign Out')
@@ -34,7 +34,7 @@ describe 'Path' do
     end
   end
 
-  describe '.edit_user_registration_path' do
+  describe '#edit_user_registration_path' do
     it 'user edit own profile' do
       sign_in_with 'person@example.com', 'password'
       edit_data_with 'Username1', 'person@example.com', 'password'
@@ -42,7 +42,7 @@ describe 'Path' do
     end
   end
 
-  describe '.help_path' do
+  describe '#help_path' do
     it 'user click Help' do
       sign_in_with 'person@example.com', 'password'
       click_link('Help')
@@ -50,11 +50,19 @@ describe 'Path' do
     end
   end
 
-  describe '.game_path' do
+  describe '#game_path' do
     it 'user click Game' do
       sign_in_with 'person@example.com', 'password'
       click_link('Game')
       expect(page).to have_current_path(game_path, ignore_query: true)
+    end
+  end
+
+  describe '#root_path' do
+    it 'unloged user click Please, sign in to play' do
+      visit root_path
+      click_link 'Please, sign in to play'
+      expect(page).to have_current_path(new_user_session_path, ignore_query: true)
     end
   end
 
@@ -71,23 +79,6 @@ describe 'Path' do
     fill_in 'Email', with: email
     fill_in 'Password', with: password
     click_button 'Log in'
-  end
-
-  def click_game
-    visit root_path
-    click_button 'Game'
-  end
-
-  def make_default_stats
-    click_link 'New Game'
-  end
-
-  def reload_page
-    visit current_path
-  end
-
-  def user_sees_notice(text)
-    expect(page).to have_content text
   end
 
   def edit_data_with(name, email, password)
