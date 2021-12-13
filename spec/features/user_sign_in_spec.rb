@@ -49,6 +49,12 @@ describe 'Path' do
       edit_data_with 'Username1', 'person1@example.com', 'password'
       expect(page).to have_current_path(root_path, ignore_query: true)
     end
+
+    it 'when user delete profile' do
+      visit edit_user_registration_path
+      click_button 'Cancel my account'
+      expect(page).to have_current_path(root_path, ignore_query: true)
+    end
   end
 
   describe '#help_path' do
