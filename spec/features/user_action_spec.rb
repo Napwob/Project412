@@ -23,7 +23,7 @@ describe 'Game' do
     end
 
     it 'when user click Cancel' do
-      click_link "Cancel"
+      click_link 'Cancel'
       expect(page).to have_current_path(game_path, ignore_query: true)
     end
 
@@ -62,7 +62,7 @@ describe 'Game' do
 
     it 'when user click Cancel' do
       visit slots_path
-      click_link "Cancel"
+      click_link 'Cancel'
       expect(page).to have_current_path(game_path, ignore_query: true)
     end
 

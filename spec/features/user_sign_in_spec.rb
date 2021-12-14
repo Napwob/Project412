@@ -17,8 +17,9 @@ describe 'Path' do
     describe '.when user registrate account using owned Email' do
       it 'test for path correctence' do
         create_user 'Username', 'person@example.com', 'password'
-        expect(page).to have_current_path("/users", ignore_query: true)
+        expect(page).to have_current_path('/users', ignore_query: true)
       end
+
       it 'test for alert' do
         create_user 'Username', 'person@example.com', 'password'
         expect(page).to have_content("1 error prohibited this user from being saved:\nEmail has already been taken")
@@ -61,8 +62,8 @@ describe 'Path' do
     end
 
     it 'when user click Back' do
-      click_link "Edit Profile"
-      click_link "Back"
+      click_link 'Edit Profile'
+      click_link 'Back'
       expect(page).to have_current_path(root_path, ignore_query: true)
     end
 
@@ -101,6 +102,7 @@ describe 'Path' do
         visit edit_user_registration_path
         click_button 'Cancel my account'
       end
+
       it 'test for path correctence' do
         expect(page).to have_current_path(root_path, ignore_query: true)
       end
@@ -111,7 +113,7 @@ describe 'Path' do
 
       it 'test for profile delition' do
         sign_in_with 'person@example.com', 'password'
-        expect(page).to have_content("Invalid Email or password.")
+        expect(page).to have_content('Invalid Email or password.')
       end
     end
   end
