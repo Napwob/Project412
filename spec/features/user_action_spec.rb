@@ -22,6 +22,11 @@ describe 'Game' do
       visit new_slot_path
     end
 
+    it 'when user click Cancel' do
+      click_link "Cancel"
+      expect(page).to have_current_path(game_path, ignore_query: true)
+    end
+
     it 'when user click Save Game and use non-empty savename' do
       fill_in 'Name save', with: 'Save 1'
       click_button 'Save Game'
@@ -53,6 +58,12 @@ describe 'Game' do
       visit new_slot_path
       fill_in 'Name save', with: 'Save 1'
       click_button 'Save Game'
+    end
+
+    it 'when user click Cancel' do
+      visit slots_path
+      click_link "Cancel"
+      expect(page).to have_current_path(game_path, ignore_query: true)
     end
 
     it 'when user click Load Game after save' do
