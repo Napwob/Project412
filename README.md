@@ -12,6 +12,7 @@ This files implements Marginal Valera game using "Ruby on Rails"
  * gem install bundler
  * bundle install
  * rails db:migrate
+ * rails db:create
 ### Rspec
  * rspec
 ### Rubocop
