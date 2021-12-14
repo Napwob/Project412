@@ -98,6 +98,25 @@ describe 'Game' do
       end
     end
 
+    describe '#Win' do
+      before do
+        click_link('Sign Out')
+        create :user, name: 'Usernamewin', email: 'personwin@example.com', password: 'passwordwin', health: '100',
+                      money: '49000'
+        sign_in_with('personwin@example.com', 'passwordwin')
+        visit game_path
+        click_link 'Go Job'
+      end
+
+      it 'when user win' do
+        user_sees_notice 'Valera say: Finally!'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
+      end
+    end
+
     describe '#Go Job' do
       before do
         click_link 'Go Job'
