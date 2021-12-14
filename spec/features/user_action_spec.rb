@@ -104,7 +104,7 @@ describe 'Game' do
       end
 
       it 'when user click Go Job' do
-        user_sees_notice 'Valera say: Its been a hard day'
+        user_sees_notice "Money: 6250₽\nValera say: Its been a hard day"
       end
 
       it 'path correctance test' do
@@ -132,7 +132,7 @@ describe 'Game' do
       end
 
       it 'when user click Drink wine and watch TV series' do
-        user_sees_notice 'Valera say: Ta-ta-tadada-ta...'
+        user_sees_notice "Money: 4800₽\nValera say: Ta-ta-tadada-ta..."
       end
 
       it 'path correctance test' do
@@ -146,7 +146,7 @@ describe 'Game' do
       end
 
       it 'when user click Go to the bar' do
-        user_sees_notice 'Valera say: Beer or not two beer?'
+        user_sees_notice "Money: 4750₽\nValera say: Beer or not two beer?"
       end
 
       it 'path correctance test' do
@@ -160,7 +160,7 @@ describe 'Game' do
       end
 
       it 'when user click Drink with marginal people' do
-        user_sees_notice 'Valera say: Oj, MOROZ MOROOOOOZ...'
+        user_sees_notice "Money: 3500₽\nValera say: Oj, MOROZ MOROOOOOZ..."
       end
 
       it 'path correctance test' do
@@ -174,7 +174,7 @@ describe 'Game' do
       end
 
       it 'when user click Sing in the subway' do
-        user_sees_notice 'Valera say: IM GONNA ROCK!!!'
+        user_sees_notice "Money: 5010₽\nValera say: IM GONNA ROCK!!!"
       end
 
       it 'path correctance test' do
