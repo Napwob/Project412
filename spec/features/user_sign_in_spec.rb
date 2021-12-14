@@ -42,7 +42,7 @@ describe 'Path' do
       sign_in_with 'person@example.com', 'password'
     end
 
-    describe '#when user edit profile Name' do
+    describe '.when user edit profile Name' do
       before do
         edit_data_with 'Username1', 'person@example.com', 'password'
       end
@@ -56,7 +56,7 @@ describe 'Path' do
       end
     end
 
-    describe '#when user edit profile Email' do
+    describe '.when user edit profile Email' do
       before do
         edit_data_with 'Username', 'person1@example.com', 'password'
       end
@@ -72,10 +72,18 @@ describe 'Path' do
       end
     end
 
-    it 'when user delete profile' do
-      visit edit_user_registration_path
-      click_button 'Cancel my account'
-      expect(page).to have_current_path(root_path, ignore_query: true)
+    describe '.when user delete profile' do
+      it 'test for path correctence' do
+        visit edit_user_registration_path
+        click_button 'Cancel my account'
+        expect(page).to have_current_path(root_path, ignore_query: true)
+      end
+
+      it 'test for profile delition' do
+        visit edit_user_registration_path
+        click_button 'Cancel my account'
+        expect(page).to have_content('Welcome, Stranger')
+      end
     end
   end
 
@@ -95,7 +103,7 @@ describe 'Path' do
       expect(page).to have_current_path(root_path, ignore_query: true)
     end
 
-    describe '#when user win' do
+    describe '.when user win' do
       before do
         sign_in_with 'personwin@example.com', 'passwordwin'
         visit game_path
