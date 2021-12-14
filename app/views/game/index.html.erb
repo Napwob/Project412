@@ -19,17 +19,17 @@
       </div>
     <% end %>
 <h6 align="center", class="nav-item">
-        <button><%= link_to 'New Game', new_game_path, method: :post, class: "link"%></button>
+        <button><%= link_to 'New Game', new_game_path, method: :get, class: "link"%></button>
         <% if !@is_lose %>
             <button><%= link_to "Save Game", new_slot_path, class: "link" %></button>
         <% end %>
         <button><%= link_to "Load Game", slots_path, class: "link" %></button>
-    <li><button class="new-button"><%= link_to 'Go Job', go_job_path, class: "link", method: :post if !@is_lose %></button></li>
-    <li><button class="new-button"><%= link_to 'Contemplate nature', contemplate_nature_path, class: "link", method: :post if !@is_lose%></button></li>
-    <li><button class="new-button"><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, class: "link", method: :post if !@is_lose%></button></li>
-    <li><button class="new-button"><%= link_to 'Go to the bar', go_to_the_bar_path, class: "link", method: :post if !@is_lose%></button></li>
-    <li><button class="new-button"><%= link_to 'Drink with marginal people', drink_with_marginal_people_path, class: "link", method: :post if !@is_lose%></button></li> 
-    <li><button class="new-button"><%= link_to 'Sing in the subway', sing_in_the_subway_path, class: "link", method: :post if !@is_lose%></button></li>
-    <li><button class="new-button"><%= link_to 'Sleep', sleep_path, class: "link", method: :post if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Go Job', go_job_path, class: "link", method: :get if !@is_lose %></button></li>
+    <li><button class="new-button"><%= link_to 'Contemplate nature', contemplate_nature_path, class: "link", method: :get if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Drink wine and watch TV series', drink_wine_and_watch_tv_series_path, class: "link", method: :get if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Go to the bar', go_to_the_bar_path, class: "link", method: :get if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Drink with marginal people', drink_with_marginal_people_path, class: "link", method: :get if !@is_lose%></button></li> 
+    <li><button class="new-button"><%= link_to 'Sing in the subway', sing_in_the_subway_path, class: "link", method: :get if !@is_lose%></button></li>
+    <li><button class="new-button"><%= link_to 'Sleep', sleep_path, class: "link", method: :get if !@is_lose%></button></li>
 </h6> 
 
