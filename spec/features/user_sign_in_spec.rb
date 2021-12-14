@@ -21,14 +21,16 @@ describe 'Path' do
   end
 
   describe '#destroy_user_session_path' do
-    it 'when user signing out' do
+    before do
       sign_in_with 'person@example.com', 'password'
+    end
+
+    it 'when user signing out' do
       click_link('Sign Out')
       expect(page).to have_current_path(root_path, ignore_query: true)
     end
 
     it 'when user singing out after getting into Game' do
-      sign_in_with 'person@example.com', 'password'
       click_link('Game')
       click_link('Sign Out')
       expect(page).to have_current_path(root_path, ignore_query: true)
@@ -40,14 +42,34 @@ describe 'Path' do
       sign_in_with 'person@example.com', 'password'
     end
 
-    it 'when user edit profile Name' do
-      edit_data_with 'Username1', 'person@example.com', 'password'
-      expect(page).to have_current_path(root_path, ignore_query: true)
+    describe '#when user edit profile Name' do
+      before do
+        edit_data_with 'Username1', 'person@example.com', 'password'
+      end
+
+      it 'test for path correctence' do
+        expect(page).to have_current_path(root_path, ignore_query: true)
+      end
+
+      it 'test for name change' do
+        expect(page).to have_content('Username1')
+      end
     end
 
-    it 'when user edit profile Email' do
-      edit_data_with 'Username1', 'person1@example.com', 'password'
-      expect(page).to have_current_path(root_path, ignore_query: true)
+    describe '#when user edit profile Email' do
+      before do
+        edit_data_with 'Username', 'person1@example.com', 'password'
+      end
+
+      it 'test for path correctence' do
+        expect(page).to have_current_path(root_path, ignore_query: true)
+      end
+
+      it 'test for Email change' do
+        click_link('Sign Out')
+        sign_in_with 'person@example.com', 'password'
+        expect(page).to have_content('Invalid Email or password.')
+      end
     end
 
     it 'when user delete profile' do
@@ -73,10 +95,19 @@ describe 'Path' do
       expect(page).to have_current_path(root_path, ignore_query: true)
     end
 
-    it 'when user win' do
-      sign_in_with 'personwin@example.com', 'passwordwin'
-      visit game_path
-      expect(page).to have_current_path(game_path, ignore_query: true)
+    describe '#when user win' do
+      before do
+        sign_in_with 'personwin@example.com', 'passwordwin'
+        visit game_path
+      end
+
+      it 'test for path correctence' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
+      end
+
+      it 'test for action correctence' do
+        expect(page).to have_content("Valera say: Finally!\nNew Game Load Game")
+      end
     end
   end
 

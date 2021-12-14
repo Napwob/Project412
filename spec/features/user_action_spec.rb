@@ -83,52 +83,116 @@ describe 'Game' do
   end
 
   describe '.GameActions' do
+    describe '#Death' do
+      before do
+        click_link 'Drink with marginal people'
+        click_link 'Drink with marginal people'
+      end
+
+      it 'when user loose' do
+        user_sees_notice 'Valera say: Farewell, cruel world...'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
+      end
+    end
+
     describe '#Go Job' do
-      it 'when user click Go Job' do
+      before do
         click_link 'Go Job'
+      end
+
+      it 'when user click Go Job' do
         user_sees_notice 'Valera say: Its been a hard day'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
 
     describe '#Contemplate nature' do
-      it 'when user click Contemplate nature' do
+      before do
         click_link 'Contemplate nature'
+      end
+
+      it 'when user click Contemplate nature' do
         user_sees_notice 'Valera say: I wandered lonely as a cloud'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
 
     describe '#Drink wine and watch TV series' do
-      it 'when user click Drink wine and watch TV series' do
+      before do
         click_link 'Drink wine and watch TV series'
+      end
+
+      it 'when user click Drink wine and watch TV series' do
         user_sees_notice 'Valera say: Ta-ta-tadada-ta...'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
 
     describe '#Go to the bar' do
-      it 'when user click Go to the bar' do
+      before do
         click_link 'Go to the bar'
+      end
+
+      it 'when user click Go to the bar' do
         user_sees_notice 'Valera say: Beer or not two beer?'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
 
     describe '#Drink with marginal people' do
-      it 'when user click Drink with marginal people' do
+      before do
         click_link 'Drink with marginal people'
+      end
+
+      it 'when user click Drink with marginal people' do
         user_sees_notice 'Valera say: Oj, MOROZ MOROOOOOZ...'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
 
     describe '#Sing in the subway' do
-      it 'when user click Sing in the subway' do
+      before do
         click_link 'Sing in the subway'
+      end
+
+      it 'when user click Sing in the subway' do
         user_sees_notice 'Valera say: IM GONNA ROCK!!!'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
 
     describe '#Sleep' do
-      it 'when user click Sleep' do
+      before do
         click_link('Sleep')
+      end
+
+      it 'when user click Sleep' do
         user_sees_notice 'Valera say: zZzZzZ...'
+      end
+
+      it 'path correctance test' do
+        expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
   end
