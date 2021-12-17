@@ -60,9 +60,7 @@ describe 'Game' do
 
   describe '#Load Game' do
     before do
-      visit new_slot_path
-      fill_in 'Name save', with: 'Save 1'
-      click_button 'Save Game'
+      save_game 'Save 1'
     end
 
     it 'when user click Cancel' do
