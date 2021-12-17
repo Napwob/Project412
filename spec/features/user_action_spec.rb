@@ -35,9 +35,14 @@ describe 'Game' do
 
     it 'when user click Save Game and rewrite save' do
       save_game 'Save_1'
-      visit new_slot_path
       save_game 'Save_1'
       expect(page).to have_current_path(game_path, ignore_query: true)
+    end
+
+    it 'when user click Save Game and save over 3 times' do
+      save_game_four_times
+      visit slots_path
+      expect(page).to have_content('Save_2 Save_3 Save_4')
     end
 
     it 'when user click Save Game and use empty savename' do
@@ -227,6 +232,13 @@ describe 'Game' do
     end
   end
 
+  def save_game_four_times
+    save_game 'Save_1'
+    save_game 'Save_2'
+    save_game 'Save_3'
+    save_game 'Save_4'
+  end
+
   def create_user(name, email, password)
     visit new_user_registration_path
     fill_in 'Name', with: name
@@ -248,6 +260,7 @@ describe 'Game' do
   end
 
   def save_game(text)
+    visit new_slot_path
     fill_in 'Name save', with: text
     click_button 'Save Game'
   end
