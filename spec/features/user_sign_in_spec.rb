@@ -5,7 +5,7 @@ describe 'Path' do
 
   before do
     create :user, name: 'Username', email: 'person@example.com', password: 'password'
-    create :user, name: 'Usernamewin', email: 'personwin@example.com', password: 'passwordwin', money: '55000'
+    create :user, name: 'Usernamewin', email: 'personwin@example.com', password: 'passwordwin', money: '49000'
   end
 
   describe '#new_user_registration_path' do
@@ -141,10 +141,12 @@ describe 'Path' do
       end
 
       it 'test for path correctence' do
+        click_link 'Go Job'
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
 
       it 'test for action correctence' do
+        click_link 'Go Job'
         expect(page).to have_content("Valera say: Finally!\nNew Game Load Game")
       end
     end
