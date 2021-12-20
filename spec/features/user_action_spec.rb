@@ -12,7 +12,7 @@ describe 'Game' do
     user_sees_notice 'Error! You not authorized.'
   end
 
-  it 'check correctance of stats initialisations' do
+  it 'correct stats initialisations' do
     visit game_path
     expect(page).to have_css('p', text: 'Money: 5000₽')
   end
