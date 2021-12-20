@@ -15,12 +15,12 @@ describe 'Path' do
     end
 
     describe '.when user registrate account using owned Email' do
-      it 'test for path correctence' do
+      it 'path correctence' do
         create_user 'Username', 'person@example.com', 'password'
         expect(page).to have_current_path('/users', ignore_query: true)
       end
 
-      it 'test for alert' do
+      it 'user see notice' do
         create_user 'Username', 'person@example.com', 'password'
         expect(page).to have_content("1 error prohibited this user from being saved:\nEmail has already been taken")
       end
@@ -72,11 +72,11 @@ describe 'Path' do
         edit_data_with 'Username1', 'person@example.com', 'password'
       end
 
-      it 'test for path correctence' do
+      it 'path correctence' do
         expect(page).to have_current_path(root_path, ignore_query: true)
       end
 
-      it 'test for name change' do
+      it 'user see changes' do
         expect(page).to have_content('Username1')
       end
     end
@@ -86,11 +86,11 @@ describe 'Path' do
         edit_data_with 'Username', 'person1@example.com', 'password'
       end
 
-      it 'test for path correctence' do
+      it 'path correctence' do
         expect(page).to have_current_path(root_path, ignore_query: true)
       end
 
-      it 'test for Email change' do
+      it 'old email alert' do
         click_link('Sign Out')
         sign_in_with 'person@example.com', 'password'
         expect(page).to have_content('Invalid Email or password.')
@@ -103,15 +103,15 @@ describe 'Path' do
         click_button 'Cancel my account'
       end
 
-      it 'test for path correctence' do
+      it 'path correctence' do
         expect(page).to have_current_path(root_path, ignore_query: true)
       end
 
-      it 'test for welcome name' do
+      it 'welcome message notice' do
         expect(page).to have_content('Welcome, Stranger')
       end
 
-      it 'test for profile delition' do
+      it 'trying to sign in by using old data' do
         sign_in_with 'person@example.com', 'password'
         expect(page).to have_content('Invalid Email or password.')
       end
@@ -140,12 +140,12 @@ describe 'Path' do
         visit game_path
       end
 
-      it 'test for path correctence' do
+      it 'path correctence' do
         click_link 'Go Job'
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
 
-      it 'test for action correctence' do
+      it 'notice and actions correction' do
         click_link 'Go Job'
         expect(page).to have_content("Valera say: Finally!\nNew Game Load Game")
       end

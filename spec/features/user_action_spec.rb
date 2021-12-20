@@ -107,7 +107,7 @@ describe 'Game' do
         user_sees_notice 'Valera say: Farewell, cruel world...'
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -126,7 +126,7 @@ describe 'Game' do
         user_sees_notice 'Valera say: Finally!'
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -140,7 +140,7 @@ describe 'Game' do
         user_sees_notice "Money: 6250₽\nValera say: Its been a hard day"
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -154,7 +154,7 @@ describe 'Game' do
         user_sees_notice 'Valera say: I wandered lonely as a cloud'
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -168,7 +168,7 @@ describe 'Game' do
         user_sees_notice "Money: 4800₽\nValera say: Ta-ta-tadada-ta..."
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -182,7 +182,7 @@ describe 'Game' do
         user_sees_notice "Money: 4750₽\nValera say: Beer or not two beer?"
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -196,7 +196,7 @@ describe 'Game' do
         user_sees_notice "Money: 3500₽\nValera say: Oj, MOROZ MOROOOOOZ..."
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -210,7 +210,7 @@ describe 'Game' do
         user_sees_notice "Money: 5010₽\nValera say: IM GONNA ROCK!!!"
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
@@ -224,7 +224,7 @@ describe 'Game' do
         user_sees_notice 'Valera say: zZzZzZ...'
       end
 
-      it 'path correctance test' do
+      it 'path correctance' do
         expect(page).to have_current_path(game_path, ignore_query: true)
       end
     end
